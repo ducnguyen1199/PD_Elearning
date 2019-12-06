@@ -1,0 +1,76 @@
+.blog-side-bar {
+	background: white;
+	width: 100%;
+	.MuiFormLabel-root {
+		font-size: $fs-md + 5;
+	}
+	#search-blog {
+		font-size: $fs-md + 5;
+	}
+	h3 {
+		color: rgba(0, 0, 0, 0.6);
+		margin-top: 50px;
+		font-size: $fs-md + 6;
+		font-weight: $fw-bold-1;
+		position: relative;
+		font-family: $font-title;
+		margin-bottom: 20px;
+		&::after {
+			content: '';
+			@include absolute_bottom(-5px, 0, 20%, 1px);
+			background: rgba(0, 0, 0, 0.6);
+		}
+	}
+	.blog-category {
+		a {
+			@include text(rgba(0, 0, 0, 0.6), $fs-md + 4, normal);
+			line-height: 35px;
+			&:hover {
+				@include text($color-pr-2, $fs-md + 4, normal);
+			}
+		}
+	}
+	.lastest-post {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		img {
+			width: 45%;
+			height: 90px;
+			overflow: hidden;
+		}
+		.lb-content {
+			padding: 5px 0;
+			margin-left: 10px;
+			width: 55%;
+			h5 {
+				@include text(black, $fs-md + 2, normal);
+				font-family: $font-title;
+				margin-bottom: 10px;
+				margin-bottom: 5px;
+				letter-spacing: 0.6px;
+				@include text_overflow(3);
+				height: 60px;
+				cursor: pointer;
+				&:hover {
+					color: $color-pr-1;
+				}
+			}
+			p {
+				@include text(rgba(0, 0, 0, 0.6), $fs-md - 2, normal);
+				font-family: $font-title;
+				letter-spacing: 0.4px;
+			}
+		}
+	}
+	.p-fixed {
+		margin-top: 20px;
+		position: fixed;
+		top: 0;
+		padding-right: 85px;
+	}
+	.p-footer {
+		position: absolute;
+		bottom: 0;
+	}
+}

@@ -1,0 +1,56 @@
+////    HELPS
+@import './helpers/variables.scss';
+@import './helpers/mixin.scss';
+
+//      COMMON
+@import './common/common.scss';
+@import './common/button.scss';
+
+////    COMPONENTS
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/itemCourseOfUser.scss';
+@import './components/coursePopular.scss';
+@import './components/loading.scss';
+@import './components/itemCourse.scss';
+
+////    PAGE
+//Home
+@import './pages/home/components/khoahoc.scss';
+@import './pages/home/components/itemCategory.scss';
+@import './pages/home/home.scss';
+@import './pages/home/views/intro.scss';
+@import './pages/home/views/category.scss';
+@import './pages/home/views/stepbuycourse.scss';
+@import './pages/home/views/listcourse-home.scss';
+@import './pages/home/views/inforElearning.scss';
+@import './pages/home/views/feel.scss';
+//Detail Cart
+@import './pages/detailCart/detaiCart.scss';
+@import './pages/detailCart/views/billCart.scss';
+//Form
+@import './pages/form/form.scss';
+//Course
+@import './pages/course/allcourse.scss';
+@import './pages/course/views/tableItemCourse.scss';
+@import './pages/course/views/coursecategory.scss';
+//Detail Course
+@import './pages/detailCourse/detailCourse.scss';
+//Profile
+@import './pages/ProfileUser/profileUser.scss';
+@import './pages/ProfileUser/views/courseAccepted.scss';
+@import './pages/ProfileUser/views/courseAttended.scss';
+@import './pages/ProfileUser/views/accountInfo.scss';
+//Blog
+@import './pages/blog/blog.scss';
+@import './pages/blog/views/blogMainContent.scss';
+@import './pages/blog/views/blogSideBar.scss';
+//Admin
+@import './pages/admin/modal/userManagementModal.scss';
+@import './pages/admin/modal/coursesManagementModal.scss';
+@import './pages/admin/modal/widthModal.scss';
+@import './pages/admin/views/courseManagement.scss';
+@import './pages/admin/views/registerCoursesByUser.scss';
+@import './pages/admin/views/registerUsersByCourse.scss';
+@import './pages/admin/views/userManagement.scss';
+@import './pages/pageNotFound/pageNotFound.scss';
