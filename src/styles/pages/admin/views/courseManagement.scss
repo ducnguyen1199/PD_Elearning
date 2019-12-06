@@ -1,0 +1,66 @@
+.course-management {
+	padding: 50px 20px;
+	.title {
+		margin-bottom: 50px;
+	}
+	.cm-head {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		button {
+			@include text(white, $fs-md, $fw-bold-1);
+			font-family: $font-title;
+			letter-spacing: 1px;
+			i {
+				margin-right: 10px;
+			}
+		}
+		input {
+			padding: 5px 10px;
+			width: 300px;
+		}
+	}
+	.table {
+		tr {
+			td {
+				vertical-align: middle;
+			}
+			.cm-name {
+				display: flex;
+				align-items: center;
+				img {
+					width: 200px;
+					height: 100px;
+					margin-right: 10px;
+				}
+				p {
+					@include text(black, $fs-md, $fw-bold-2);
+					&.cm-category {
+						@include text(black, $fs-md -3, normal);
+						line-height: 35px;
+					}
+				}
+				a {
+					color: white;
+				}
+			}
+			.cm-creator {
+				p {
+					@include text(black, $fs-md, $fw-bold-2);
+					line-height: 40px;
+					&.cm-type-creator {
+						@include text(black, $fs-md - 3, normal);
+					}
+				}
+			}
+			.cm-actions {
+				.bttn {
+					font-size: $fs-md;
+					padding: 5px 10px;
+					margin: 5px;
+				}
+			}
+		}
+	}
+}

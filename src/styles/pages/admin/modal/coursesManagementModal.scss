@@ -1,0 +1,33 @@
+.cm-modal {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	label {
+		cursor: pointer;
+	}
+	.cm-modal-content-left {
+		width: 49%;
+	}
+	.cm-modal-content-right {
+		width: 49%;
+	}
+	.cm-modal-content-bottom {
+		width: 100%;
+		button {
+			display: block;
+			margin-bottom: 20px;
+		}
+		textarea {
+			width: 100%;
+			height: 150px;
+			resize: none;
+		}
+	}
+	.massage-error {
+		@include text(rgba(255, 0, 0, 0.8), $fs-sm, normal);
+	}
+	.massage-error-hide {
+		opacity: 0;
+		@include text(rgba(255, 0, 0, 0.8), $fs-sm, normal);
+	}
+}
