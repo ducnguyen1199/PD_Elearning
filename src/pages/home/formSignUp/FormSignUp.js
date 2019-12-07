@@ -133,7 +133,7 @@ class FormSignUp extends Component {
 		});
 	};
 	checkPrompt = () => {
-		return !this.state.whenSubmit
+		return this.state.whenSubmit
 			? false
 			: !!this.state.values.taiKhoan ||
 					!!this.state.values.matKhau ||
