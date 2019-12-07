@@ -33,7 +33,7 @@ class DetailCourse extends Component {
 					this.props.addToCart({
 						course: {
 							...this.props.dataDetailCourse,
-							fee: this.state.fee,
+							fee: Number(this.state.fee),
 						},
 					})
 				}}>
@@ -128,10 +128,10 @@ class DetailCourse extends Component {
 													<div className="item-content ">
 														<div className="content">
 															<p>
-																Đánh giá{' '}
-																<p>
-																	5 <i class="fa fa-star" aria-hidden="true"></i>
-																</p>
+																Đánh giá {" "}
+																<span>
+																	5 <i className="fa fa-star" aria-hidden="true"></i>
+																</span>
 															</p>
 														</div>
 													</div>
@@ -146,7 +146,7 @@ class DetailCourse extends Component {
 																}}
 															>
 																Thêm vào giỏ hàng{' '}
-																<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+																<i className="fa fa-shopping-cart" aria-hidden="true"></i>
 															</button> */}
 															{this.handleAddToCart()}
 														</div>
@@ -167,13 +167,13 @@ class DetailCourse extends Component {
 										<p className="featre-tittle">Thông tin khóa học</p>
 										<ul>
 											<li>
-												<i class="fa fa-clone"></i>
+												<i className="fa fa-clone"></i>
 												<span>
 													Tên khóa học: <span>{this.props.dataDetailCourse.tenKhoaHoc}</span>
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-list-ul"></i>
+												<i className="fa fa-list-ul"></i>
 												<span>
 													Danh mục:{' '}
 													<span>
@@ -185,31 +185,31 @@ class DetailCourse extends Component {
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+												<i className="fa fa-bookmark-o" aria-hidden="true"></i>
 												<span>
 													Mô tả: <span>{this.props.dataDetailCourse.moTa}</span>
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-clock-o" aria-hidden="true"></i>
+												<i className="fa fa-clock-o" aria-hidden="true"></i>
 												<span>
 													Ngày tạo: <span>{this.props.dataDetailCourse.ngayTao}</span>
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-eye" aria-hidden="true"></i>
+												<i className="fa fa-eye" aria-hidden="true"></i>
 												<span>
 													Lượt xem: <span>{this.props.dataDetailCourse.luotXem}</span>
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<i className="fa fa-graduation-cap" aria-hidden="true"></i>
 												<span>
 													Học viên: <span>{this.props.dataDetailCourse.soLuongHocVien}</span>
 												</span>
 											</li>
 											<li>
-												<i class="fa fa-money" aria-hidden="true"></i>
+												<i className="fa fa-money" aria-hidden="true"></i>
 												<span>
 													Giá : <span>{this.state.fee}$</span>
 												</span>
