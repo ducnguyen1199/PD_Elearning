@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../../redux/actions/index';
 import widthmodal from '../../components/widthmodal/widthmodal';
 import coursesManagementModal from '../../components/widthmodal/coursesManagementModal';
 import { NavLink } from 'react-router-dom';
+import Loading from '../../../../components/Loading';
 const FormModal = widthmodal(coursesManagementModal);
 const CoursesManagement = props => {
 	const [state, setstate] = useState({ keyword: '', status: true });
@@ -75,43 +76,46 @@ const CoursesManagement = props => {
 			});
 	};
 	return (
-		<section className="course-management">
-			<h3 className="title">
-				<i class="fa fa-book" aria-hidden="true"></i> COURSES MANAGEMENT
-			</h3>
-			<div className="cm-head">
-				<button
-					className="btn--green"
-					data-toggle="modal"
-					data-target="#modelId"
-					onClick={() => {
-						setstate({ ...state, status: true });
-						props.onEdit('');
-					}}
-				>
-					<i class="fa fa-plus" aria-hidden="true"></i>ADD COURSE
-				</button>
-				<input
-					placeholder="Search course"
-					onChange={event => {
-						handleSearch(event);
-					}}
-				/>
-			</div>
-			<table className="table table-striped">
-				<thead>
-					<tr>
-						<th>STT</th>
-						<th>TÊN KHÓA HỌC</th>
-						<th>NGƯỜI TẠO</th>
-						<th>NGÀY TẠO</th>
-						<th>THAO TÁC</th>
-					</tr>
-				</thead>
-				<tbody>{listCourse ? renderListCourse() : ''}</tbody>
-			</table>
-			<FormModal nameForm={state.status ? 'THEM_KHOA_HOC' : 'SUA_KHOA_HOC'} />
-		</section>
+		<Fragment>
+			<Loading />
+			<section className="course-management">
+				<h3 className="title">
+					<i class="fa fa-book" aria-hidden="true"></i> COURSES MANAGEMENT
+				</h3>
+				<div className="cm-head">
+					<button
+						className="btn--green"
+						data-toggle="modal"
+						data-target="#modelId"
+						onClick={() => {
+							setstate({ ...state, status: true });
+							props.onEdit('');
+						}}
+					>
+						<i class="fa fa-plus" aria-hidden="true"></i>ADD COURSE
+					</button>
+					<input
+						placeholder="Search course"
+						onChange={event => {
+							handleSearch(event);
+						}}
+					/>
+				</div>
+				<table className="table table-striped">
+					<thead>
+						<tr>
+							<th>STT</th>
+							<th>TÊN KHÓA HỌC</th>
+							<th>NGƯỜI TẠO</th>
+							<th>NGÀY TẠO</th>
+							<th>THAO TÁC</th>
+						</tr>
+					</thead>
+					<tbody>{listCourse ? renderListCourse() : ''}</tbody>
+				</table>
+				<FormModal nameForm={state.status ? 'THEM_KHOA_HOC' : 'SUA_KHOA_HOC'} />
+			</section>
+		</Fragment>
 	);
 };
 

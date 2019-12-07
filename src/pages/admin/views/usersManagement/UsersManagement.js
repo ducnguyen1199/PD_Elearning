@@ -4,6 +4,7 @@ import * as actions from '../../../../redux/actions/index';
 import { connect } from 'react-redux';
 import userManagementModal from '../../components/widthmodal/userManagementModal';
 import widthmodal from '../../components/widthmodal/widthmodal';
+import Loading from '../../../../components/Loading';
 let FormsModal = widthmodal(userManagementModal);
 const UsersManagement = props => {
 	const [state, setstate] = useState({ status: true, keyword: '', UserItem: '' });
@@ -71,47 +72,50 @@ const UsersManagement = props => {
 		});
 	};
 	return (
-		<section className="user-management">
-			<div className="user-management-tittle">
-				<h3 className="title">
-					<i class="fa fa-users" aria-hidden="true"></i>
-					USER MANAGEMENT
-				</h3>
-			</div>
+		<Fragment>
+			<Loading />
+			<section className="user-management">
+				<div className="user-management-tittle">
+					<h3 className="title">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						USER MANAGEMENT
+					</h3>
+				</div>
 
-			<div className="user-management-head">
-				<button
-					className="btn--green"
-					data-toggle="modal"
-					data-target="#modelId"
-					onClick={() => {
-						setstate({
-							...state,
-							status: true,
-						});
-					}}
-				>
-					<i class="fa fa-plus" aria-hidden="true"></i>ADD USER
-				</button>
-				<input placeholder="Search user" onChange={handleOnchange} />
-			</div>
-			<table className="table table-striped">
-				<thead>
-					<tr>
-						<th> STT</th>
-						<th> TÀI KHOẢN</th>
-						<th></th>
-						<th> HỌ TÊN</th>
-						<th> EMAIL</th>
-						<th> SỐ ĐT</th>
-						<th> LOẠI</th>
-						<th>THAO TÁC</th>
-					</tr>
-				</thead>
-				<tbody>{renderUserManagementHTML()}</tbody>
-			</table>
-			<FormsModal nameForm={state.status ? 'THEM_NGUOI_DUNG' : 'SUA_NGUOI_DUNG'} />
-		</section>
+				<div className="user-management-head">
+					<button
+						className="btn--green"
+						data-toggle="modal"
+						data-target="#modelId"
+						onClick={() => {
+							setstate({
+								...state,
+								status: true,
+							});
+						}}
+					>
+						<i class="fa fa-plus" aria-hidden="true"></i>ADD USER
+					</button>
+					<input placeholder="Search user" onChange={handleOnchange} />
+				</div>
+				<table className="table table-striped">
+					<thead>
+						<tr>
+							<th> STT</th>
+							<th> TÀI KHOẢN</th>
+							<th></th>
+							<th> HỌ TÊN</th>
+							<th> EMAIL</th>
+							<th> SỐ ĐT</th>
+							<th> LOẠI</th>
+							<th>THAO TÁC</th>
+						</tr>
+					</thead>
+					<tbody>{renderUserManagementHTML()}</tbody>
+				</table>
+				<FormsModal nameForm={state.status ? 'THEM_NGUOI_DUNG' : 'SUA_NGUOI_DUNG'} />
+			</section>
+		</Fragment>
 	);
 };
 const mapDispatchToProps = dispatch => {
