@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../../redux/actions/index';
+import Swal from 'sweetalert2';
+import * as $ from 'jquery';
 class userManagementModal extends Component {
 	constructor(props) {
 		super(props);
@@ -12,9 +14,16 @@ class userManagementModal extends Component {
 			maLoaiNguoiDung: '',
 			maNhom: 'GP01',
 			email: '',
+			whenSubmit: false,
 		};
 	}
-
+	componentDidMount() {
+		$(document).ready(() => {
+			$('#modelId').on('hide.bs.modal', () => {
+				this.checkPrompt();
+			});
+		});
+	}
 	componentDidUpdate(nextProps) {
 		if (nextProps.accountInfo !== this.props.accountInfo || nextProps.nameForm !== this.props.nameForm) {
 			if (this.props.nameForm === 'THEM_NGUOI_DUNG') {
@@ -42,15 +51,10 @@ class userManagementModal extends Component {
 	}
 	handleOnChange = e => {
 		let { name, value } = e.target;
-		this.setState(
-			{
-				...this.state,
-				[name]: value,
-			},
-			() => {
-				console.log(this.state);
-			}
-		);
+		this.setState({
+			...this.state,
+			[name]: value,
+		});
 	};
 	handleNameForm = () => {
 		let nameForm = '';
@@ -66,8 +70,35 @@ class userManagementModal extends Component {
 		}
 		return nameForm;
 	};
+	checkPrompt = () => {
+		if (
+			(!!this.state.taiKhoan ||
+				!!this.state.matKhau ||
+				!!this.state.hoTen ||
+				!!this.state.soDT ||
+				!!this.state.email ||
+				!!this.state.maLoaiNguoiDung) &&
+			!this.state.whenSubmit
+		) {
+			Swal.fire({
+				position: 'center',
+				icon: 'success',
+				icon: 'warning',
+				html: `<h3 style="color:#f8bb86"><b>WARNING!</b></h3><b>Bạn có muốn điền tiếp thông tin còn đang dở dang không?</b>`,
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Đồng ý',
+				cancelButtonText: 'Hủy',
+				reverseButtons: true,
+			}).then(rs => {
+				if (rs.value) {
+					$('#modelId').modal('show');
+				}
+			});
+		}
+	};
 	render() {
-		console.log(this.state);
 		return (
 			<Fragment>
 				<div className="modal-body um-modal">
@@ -161,6 +192,9 @@ class userManagementModal extends Component {
 						className="btn btn-primary"
 						id="editModal"
 						onClick={() => {
+							this.setState({
+								whenSubmit: true,
+							});
 							this.props.onSubmit(this.state, this.props.nameForm);
 						}}
 					>

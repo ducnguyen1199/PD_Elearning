@@ -96,7 +96,7 @@ export const actSignIn = (data, history) => {
 					localStorage.setItem('infoAccount', JSON.stringify(data));
 					successApi('ĐĂNG NHẬP THÀNH CÔNG.').then(() => {
 						localStorage.setItem('user', JSON.stringify(rs.data));
-						history.push('/home');
+						history.push(JSON.parse(localStorage.getItem('prevPage')));
 					});
 				}
 			})
@@ -151,7 +151,6 @@ export const actAddUserAPI = data => {
 					timer: 1500,
 				});
 			});
-
 	};
 };
 export const actGetListUserAPI = () => {
@@ -187,7 +186,7 @@ export const actGetInfoAccount = () => {
 					console.log(err);
 				});
 		};
-	} else return dispatch => { };
+	} else return dispatch => {};
 };
 export const actGetInfoAccountAdmin = data => {
 	return dispatch => {
@@ -213,12 +212,11 @@ export const actGetInfoAccountAdmin = data => {
 };
 
 export const actPUTinfoAccount = data => {
-	let user = "";
+	let user = '';
 
-	if (window.location.pathname === "/home/profile") {
+	if (window.location.pathname === '/home/profile') {
 		user = JSON.parse(localStorage.getItem('user'));
-	}
-	else {
+	} else {
 		user = JSON.parse(localStorage.getItem('userAdmin'));
 	}
 	return dispatch => {
@@ -261,52 +259,48 @@ export const actDeleteUserAPI = data => {
 export const actGetCourseWaitingAPI = data => {
 	return dispatch => {
 		let user;
-		if (window.location.pathname === "/admin/user") {
+		if (window.location.pathname === '/admin/user') {
 			user = JSON.parse(localStorage.getItem('userAdmin'));
-		}
-		else {
+		} else {
 			user = JSON.parse(localStorage.getItem('user'));
 		}
 
-		callApi("QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet", "POST", data, {
+		callApi('QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet', 'POST', data, {
 			Authorization: `Bearer ${user.accessToken}`,
 		})
 			.then(rs => {
 				dispatch({
 					type: actionTypes.GET_COURSE_WAITING,
-					data: rs.data
-				})
+					data: rs.data,
+				});
 			})
 			.catch(err => {
 				console.log(err.response.data);
-			})
-	}
-
-}
+			});
+	};
+};
 export const actGetListCourseAccpetedAPI = data => {
 	return dispatch => {
 		let user;
-		if (window.location.pathname === "/home/profile") {
+		if (window.location.pathname === '/home/profile') {
 			user = JSON.parse(localStorage.getItem('user'));
-		}
-		else {
+		} else {
 			user = JSON.parse(localStorage.getItem('userAdmin'));
 		}
-		callApi("QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet", "POST", data, {
+		callApi('QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', 'POST', data, {
 			Authorization: `Bearer ${user.accessToken}`,
 		})
 			.then(rs => {
 				dispatch({
 					type: actionTypes.GET_LIST_COURSE_ACCEPTED,
-					data: rs.data
-				})
+					data: rs.data,
+				});
 			})
 			.catch(err => {
 				console.log(err.response.data);
-			})
-	}
-
-}
+			});
+	};
+};
 export const actCancelAttendCourse = data => {
 	const user = JSON.parse(localStorage.getItem('user'));
 	return dispatch => {
@@ -319,7 +313,7 @@ export const actCancelAttendCourse = data => {
 					});
 				});
 			})
-			.catch(err => { });
+			.catch(err => {});
 	};
 };
 export const actCancelAttendCourseAdmin = data => {
@@ -343,29 +337,33 @@ export const actAcceptCourse = data => {
 	const userAdmin = JSON.parse(localStorage.getItem('userAdmin'));
 	let { maKhoaHoc, taiKhoan } = data;
 	return dispatch => {
-		callApi("QuanLyKhoaHoc/GhiDanhKhoaHoc", "POST", { maKhoaHoc, taiKhoan }, { Authorization: `Bearer ${userAdmin.accessToken}` })
+		callApi(
+			'QuanLyKhoaHoc/GhiDanhKhoaHoc',
+			'POST',
+			{ maKhoaHoc, taiKhoan },
+			{ Authorization: `Bearer ${userAdmin.accessToken}` }
+		)
 			.then(rs => {
-				successApi("Ghi danh thành công")
+				successApi('Ghi danh thành công');
 				dispatch({
 					type: actionTypes.ACCPET_COURSE_REGISTER,
-					data: data
-				})
+					data: data,
+				});
 			})
 			.catch(err => {
 				errorApi(err);
-			})
-	}
-}
+			});
+	};
+};
 
 export const actAddToCart = data => {
 	return dispatch => {
-		if (localStorage.getItem("user")) {
+		if (localStorage.getItem('user')) {
 			dispatch({
 				type: actionTypes.ADD_TO_CART,
 				data,
 			});
-		}
-		else {
+		} else {
 			Swal.fire({
 				position: 'center',
 				icon: 'error',
@@ -374,7 +372,6 @@ export const actAddToCart = data => {
 				timer: 1500,
 			});
 		}
-
 	};
 };
 
