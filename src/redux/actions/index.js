@@ -260,9 +260,16 @@ export const actDeleteUserAPI = data => {
 };
 export const actGetCourseWaitingAPI = data => {
 	return dispatch => {
-		const userAdmin = JSON.parse(localStorage.getItem('userAdmin'));
+		let user;
+		if (window.location.pathname === "/admin/user") {
+			user = JSON.parse(localStorage.getItem('userAdmin'));
+		}
+		else {
+			user = JSON.parse(localStorage.getItem('user'));
+		}
+
 		callApi("QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet", "POST", data, {
-			Authorization: `Bearer ${userAdmin.accessToken}`,
+			Authorization: `Bearer ${user.accessToken}`,
 		})
 			.then(rs => {
 				dispatch({
@@ -352,10 +359,22 @@ export const actAcceptCourse = data => {
 
 export const actAddToCart = data => {
 	return dispatch => {
-		dispatch({
-			type: actionTypes.ADD_TO_CART,
-			data,
-		});
+		if (localStorage.getItem("user")) {
+			dispatch({
+				type: actionTypes.ADD_TO_CART,
+				data,
+			});
+		}
+		else {
+			Swal.fire({
+				position: 'center',
+				icon: 'error',
+				html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG ĐĂNG NHẬP</b>`,
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		}
+
 	};
 };
 
