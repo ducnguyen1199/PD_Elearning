@@ -14,6 +14,7 @@ import UsersManagement from './pages/admin/views/usersManagement/UsersManagement
 import RegisterUsersByCourse from './pages/admin/views/register/RegisterUsersByCourse';
 import RegisterCoursesByUser from './pages/admin/views/register/RegisterCoursesByUser';
 import Blog from './pages/home/blog/Blog';
+import About from './pages/home/about/about';
 
 export const routesHome = [
 	{ path: '/', exact: true, component: Home },
@@ -25,6 +26,7 @@ export const routesHome = [
 	{ path: '/home/detail-course/:id', exact: false, component: DetailCourse },
 	{ path: '/home/profile', exact: false, component: ProfileUser },
 	{ path: '/home/blog', exact: false, component: Blog },
+	{ path: '/home/home-about', exact: false, component: About },
 ];
 
 export const routesAdmin = [

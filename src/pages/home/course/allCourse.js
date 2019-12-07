@@ -50,8 +50,8 @@ class AllCourse extends Component {
 				id === 'all'
 					? this.props.listCourse
 					: this.props.listCourse.filter(item => {
-							return item.danhMucKhoaHoc.maDanhMucKhoahoc == id;
-					  });
+						return item.danhMucKhoaHoc.maDanhMucKhoahoc == id;
+					});
 		}
 		this.setState({
 			keyword,
@@ -229,13 +229,13 @@ class AllCourse extends Component {
 					<hr></hr>
 					<div className="allCourse-body">
 						<div className="row">
-							<div className="col-10" data-aos="zoom-out-right" data-aos-duration="1000">
+							<div className="col-10" data-aos="zoom-out-right" data-aos-duration="1000" data-aos-delay="1100">
 								<TableItemCourse
 									listCourse={tempCourseArray}
 									courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''}
 								/>
 							</div>
-							<div className="col-2" data-aos="zoom-out-left" data-aos-duration="1000">
+							<div className="col-2" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1100">
 								<div className="course-category">
 									<h4 className="title ">Danh mục khóa học</h4>
 
