@@ -40,7 +40,7 @@ export default class About extends Component {
 
                             <div className="PD-team-img" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1500"
                             >
-                                <img src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.0-9/60925028_326416514644640_1579520926578376704_n.jpg?_nc_cat=110&_nc_ohc=UDcDzIQA84UAQmg5NBgdfXFqWnyZe-meAP8IzZJhASMiXgzGV7r_YsDgQ&_nc_ht=scontent.fsgn2-3.fna&oh=ac18537a53e982a3f2fbb98b7b609690&oe=5E7470FA" />
+                                <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/78680406_424307555140863_4751269242911850496_n.png?_nc_cat=107&_nc_ohc=4hvDXjqRXaQAQm9Iq5g2Hb7CEjdB0b5C3BTMetR6kRR9Ea3ty_g2YDPIA&_nc_ht=scontent.fsgn2-1.fna&oh=a2c3c2cc2eac15a1eabba6cf6d3decb8&oe=5E73DD0D" />
                             </div>
                         </div>
                         <div className="About-process">
@@ -55,7 +55,7 @@ export default class About extends Component {
                                         <iframe src="https://www.youtube.com/embed/bxtMvIDLu2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div className="video" >
-                                        <iframe src="https://www.youtube.com/embed/Ala-GHm1LDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/pkDjBE4JgWE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
 

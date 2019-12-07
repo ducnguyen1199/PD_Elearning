@@ -28,6 +28,7 @@ const Admin = (props) => {
 				<h4>ĐĂNG NHẬP</h4>
 				<div>
 					<TextField
+						type="text"
 						id="standard-basic"
 						label="Tài Khoản"
 						margin="normal"
@@ -37,6 +38,7 @@ const Admin = (props) => {
 				</div>
 				<div>
 					<TextField
+						type="password"
 						id="standard-basic"
 						label="Mật Khẩu"
 						margin="normal"
