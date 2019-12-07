@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../../redux/actions/index';
 import classnames from 'classnames';
 import Swal from 'sweetalert2';
+import * as $ from 'jquery';
 class coursesManagementModal extends Component {
 	constructor(props) {
 		super(props);
@@ -30,10 +31,16 @@ class coursesManagementModal extends Component {
 				moTa: false,
 				form: false,
 			},
+			whenSubmit: false,
 		};
 	}
 	componentDidMount() {
 		this.props.getCategoryCourse();
+		$(document).ready(() => {
+			$('#modelId').on('hide.bs.modal', () => {
+				this.checkPrompt();
+			});
+		});
 	}
 	componentDidUpdate(nextProps) {
 		const { editCourse } = this.props;
@@ -116,14 +123,9 @@ class coursesManagementModal extends Component {
 	};
 	handleOnChange = e => {
 		let { name, value } = e.target;
-		this.setState(
-			{
-				values: { ...this.state.values, [name]: value },
-			},
-			() => {
-				console.log(this.state);
-			}
-		);
+		this.setState({
+			values: { ...this.state.values, [name]: value },
+		});
 	};
 	handleErrors = e => {
 		let { name, value, placeholder } = e.target;
@@ -177,13 +179,46 @@ class coursesManagementModal extends Component {
 	};
 	handleOnSubmit = e => {
 		e.preventDefault();
-		this.state.valids.form
-			? this.props.onSubmit(this.state.values, this.props.nameForm)
-			: Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'Vui lòng kiểm tra thông tin!',
-			  });
+		if (this.state.valids.form) {
+			this.setState({
+				whenSubmit: true,
+			});
+			this.props.onSubmit(this.state.values, this.props.nameForm);
+		} else {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Vui lòng kiểm tra thông tin!',
+			});
+		}
+	};
+	checkPrompt = () => {
+		if (
+			(!!this.state.values.maKhoaHoc ||
+				!!this.state.values.biDanh ||
+				!!this.state.values.tenKhoaHoc ||
+				!!this.state.values.moTa ||
+				!!this.state.values.hinhAnh ||
+				!!this.state.values.maDanhMucKhoaHoc) &&
+			!this.state.whenSubmit
+		) {
+			Swal.fire({
+				position: 'center',
+				icon: 'success',
+				icon: 'warning',
+				html: `<h3 style="color:#f8bb86"><b>WARNING!</b></h3><b>Bạn có muốn điền tiếp thông tin còn đang dở dang không?</b>`,
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Đồng ý',
+				cancelButtonText: 'Hủy',
+				reverseButtons: true,
+			}).then(rs => {
+				if (rs.value) {
+					$('#modelId').modal('show');
+				}
+			});
+		}
 	};
 	render() {
 		let { editCourse } = this.props;

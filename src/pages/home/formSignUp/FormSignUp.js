@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Prompt } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions/index';
 import Swal from 'sweetalert2';
@@ -30,6 +30,8 @@ class FormSignUp extends Component {
 				email: false,
 				form: false,
 			},
+			xacNhanMatKhau: '',
+			whenSubmit: false,
 		};
 	}
 	componentDidMount() {
@@ -120,24 +122,45 @@ class FormSignUp extends Component {
 		this.setState({
 			valids: {
 				...valids,
-				form: valids.taiKhoan && valids.matKhau && valids.hoTen && valids.soDT && valids.email,
+				form:
+					valids.taiKhoan &&
+					valids.matKhau &&
+					valids.hoTen &&
+					valids.soDT &&
+					valids.email &&
+					this.state.xacNhanMatKhau === this.state.values.matKhau,
 			},
 		});
 	};
+	checkPrompt = () => {
+		return !this.state.whenSubmit
+			? false
+			: !!this.state.values.taiKhoan ||
+					!!this.state.values.matKhau ||
+					!!this.state.values.hoTen ||
+					!!this.state.values.soDT ||
+					!!this.state.values.email;
+	};
 	handleOnSubmit = e => {
 		e.preventDefault();
-		this.state.valids.form
-			? this.props.SignUpUser(this.state.values, this.props.propsCompnent.history)
-			: Swal.fire({
-					icon: 'error',
-					title: 'Oops...',
-					text: 'Vui lòng kiểm tra thông tin!',
-			  });
+		if (this.state.valids.form) {
+			this.setState({
+				whenSubmit: true,
+			});
+			this.props.SignUpUser(this.state.values, this.props.propsCompnent.history);
+		} else {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Vui lòng kiểm tra thông tin!',
+			});
+		}
 	};
 	render() {
 		let { errors } = this.state;
 		return (
 			<section className="form">
+				<Prompt when={this.checkPrompt()} message="Bạn có muốn rời trang không?" />
 				<img src="../img/blog-1.jpg" />
 				<div className="main-content signup">
 					<form>
@@ -182,6 +205,24 @@ class FormSignUp extends Component {
 								<div>
 									<TextField
 										id="standard-basic"
+										label="Nhập Lại Mật Khẩu"
+										type="password"
+										onChange={e => {
+											this.setState({
+												xacNhanMatKhau: e.target.value,
+											});
+										}}
+										placeholder="Nhập Lại Mật Khẩu"
+										margin="normal"
+										name="xacNhanMatKhau"
+									/>
+								</div>
+								<div className="massage-error-hide">massage-error-hide</div>
+							</div>
+							<div className="gr-input">
+								<div>
+									<TextField
+										id="standard-basic"
 										label="Họ Tên"
 										onChange={this.handleOnChange}
 										onBlur={this.handleErrors}
@@ -196,8 +237,6 @@ class FormSignUp extends Component {
 								) : (
 									<div className="massage-error-hide">massage-error-hide</div>
 								)}
-							</div>
-							<div className="gr-input">
 								<div>
 									<TextField
 										id="standard-basic"
