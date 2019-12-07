@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../../../redux/actions/index';
-
+import Swal from 'sweetalert2';
 const CoursesAreWaiting = props => {
 	const renderTableHTML = () => {
 		let { listCourseWaiting } = props;
@@ -27,7 +27,22 @@ const CoursesAreWaiting = props => {
 							class="fa fa-times"
 							aria-hidden="true"
 							onClick={() => {
-								props.cancelAttendCourse({ maKhoaHoc: item.maKhoaHoc, taiKhoan: props.id });
+								Swal.fire({
+									position: 'center',
+									icon: 'success',
+									icon: 'warning',
+									html: `<h3 style="color:#f8bb86"><b>WARNING!</b></h3><b>Bạn có muốn hủy ghi danh khóa học này không?</b>`,
+									showCancelButton: true,
+									confirmButtonColor: '#d33',
+									cancelButtonColor: '#3085d6',
+									confirmButtonText: 'Đồng ý',
+									cancelButtonText: 'Hủy',
+									reverseButtons: true,
+								}).then(rs => {
+									if (rs.value) {
+										props.cancelAttendCourse({ maKhoaHoc: item.maKhoaHoc, taiKhoan: props.id });
+									}
+								});
 							}}
 						></i>
 					</td>

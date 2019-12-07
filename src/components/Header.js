@@ -9,7 +9,11 @@ class Header extends Component {
 		this.state = {
 			prevScrollpos: window.pageYOffset,
 			visible: true,
-			homePage: window.location.pathname === '/' || window.location.pathname === '/home',
+			transparent:
+				window.location.pathname === '/' ||
+				window.location.pathname === '/home' ||
+				window.location.pathname === '/home/dang-nhap' ||
+				window.location.pathname === '/home/dang-ky',
 			updateCart: false,
 		};
 	}
@@ -26,12 +30,16 @@ class Header extends Component {
 		const { prevScrollpos } = this.state;
 		const currentScrollPos = window.pageYOffset;
 		const visible = prevScrollpos > currentScrollPos;
-		const homePage =
-			currentScrollPos === 0 && (window.location.pathname === '/' || window.location.pathname === '/home');
+		const transparent =
+			currentScrollPos === 0 &&
+			(window.location.pathname === '/' ||
+				window.location.pathname === '/home' ||
+				window.location.pathname === '/home/dang-nhap' ||
+				window.location.pathname === '/home/dang-ky');
 		this.setState({
 			prevScrollpos: currentScrollPos,
 			visible,
-			homePage,
+			transparent,
 		});
 	};
 	handleAddtoCart = () => {
@@ -93,9 +101,9 @@ class Header extends Component {
 				<Fragment>
 					{account.maLoaiNguoiDung === 'GV' ? (
 						<div className="info-account">
-							<div className="setting">
+							<NavLink to="/admin/dashboard" className="setting">
 								<i className="fa fa-cog"></i>
-							</div>
+							</NavLink>
 						</div>
 					) : (
 						''
@@ -143,7 +151,7 @@ class Header extends Component {
 			<header
 				className={classnames('header', {
 					'navbar--hidden': !this.state.visible,
-					'header-home': this.state.homePage,
+					'header-transparent': this.state.transparent,
 				})}
 			>
 				<nav className="navbar navbar-expand-sm">
