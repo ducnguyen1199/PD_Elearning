@@ -40,6 +40,7 @@ class AccountInfo extends Component {
 		let a = document.getElementsByClassName('form-control');
 		for (let i = 1; i < a.length; i++) {
 			a[i].removeAttribute('disabled');
+			console.log(a[i]);
 		}
 		let accountInfo = this.props.accountInfo;
 		this.setState({
@@ -170,11 +171,11 @@ class AccountInfo extends Component {
 							disabled
 						/>
 					</div>
+					<input type="password" className="form-control d-none" />
 					<div className="form-group">
 						<label>Mật khẩu </label>
 						<input
 							type="password"
-							id="AccountPassword"
 							name="matKhau"
 							className="form-control"
 							placeholder="Mật Khẩu "

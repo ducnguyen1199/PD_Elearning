@@ -96,7 +96,6 @@ class Header extends Component {
 	renderAccount = () => {
 		if (localStorage.getItem('user')) {
 			let account = JSON.parse(localStorage.getItem('user'));
-			console.log(account);
 			return (
 				<Fragment>
 					{account.maLoaiNguoiDung === 'GV' ? (
