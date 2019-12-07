@@ -52,7 +52,7 @@ export default class About extends Component {
                                 </div>
                                 <div className="col-4 our-process-video" data-aos="fade-up-left" data-aos-duration="1000" >
                                     <div className="video" data-aos="fade-down-left" data-aos-duration="1000">
-                                        <iframe src="https://www.youtube.com/embed/Ala-GHm1LDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/bxtMvIDLu2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div className="video" >
                                         <iframe src="https://www.youtube.com/embed/Ala-GHm1LDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
