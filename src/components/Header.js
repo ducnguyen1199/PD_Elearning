@@ -91,7 +91,8 @@ class Header extends Component {
 		window.location.replace('/');
 	};
 	savePrevPage = () => {
-		localStorage.setItem('prevPage', JSON.stringify(window.location.pathname));
+		if (window.location.pathname !== '/home/dang-ky' && window.location.pathname !== '/home/dang-nhap')
+			localStorage.setItem('prevPage', JSON.stringify(window.location.pathname));
 	};
 	renderAccount = () => {
 		if (localStorage.getItem('user')) {
