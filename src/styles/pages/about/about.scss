@@ -1,0 +1,224 @@
+.About-page{
+    background-color: #e3dfdb;
+    margin-top: 62px;
+    box-sizing: border-box;
+    overflow: hidden;
+    .wrap-about-page{
+        margin: 0px 50px;
+        .About-welcome{
+            padding: 40px 0px;
+            overflow: hidden;
+            .About-welcome-head{
+                text-align: center;
+                padding: 30px 0px;
+                h3{
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    letter-spacing: 1px;
+                    font-size: 45px;
+                }
+                .bottom-line {
+                    padding-bottom: 20px;
+					&::before {
+						display: inline-block;
+						vertical-align: middle;
+						height: 3px;
+						width: 300px;
+						content: '';
+						background: linear-gradient(to left,rgb(27, 26, 26), transparent);
+					}
+					&::after {
+						display: inline-block;
+						vertical-align: middle;
+						height: 3px;
+						width: 300px;
+						content: '';
+						background: linear-gradient(to right,rgb(27, 26, 26), transparent);
+					}
+				}
+                p{
+                    font-size: 19px;
+                }
+
+            }
+            .PD-team-img{
+                margin: 0 auto;
+                width: 80%;
+                img{
+                    width: 100%;
+                    
+                }
+            }
+        }
+        .About-process{
+            overflow: hidden;
+           .our-process{
+               background-color: #fff;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               box-shadow: 0px 0px 5px 5px rgba(0,0,0,.15);
+               p{
+                   text-align: justify;
+                   font-family: $font-title;
+                   font-size: 16px;
+                   padding: 0px 40px;
+                   font-weight: 600;
+                   line-height: 30px;
+                   letter-spacing: 1px;
+               }
+           }
+           .our-process-video{
+               .video{
+                   height: 250px;
+                   &:first-child{
+                       margin-bottom: 10px;
+                   }
+               }
+               iframe{
+                   width: 100%;
+                   height: 250px;
+                
+               }
+           }
+            
+        }
+    }
+    .Our-team-mate{
+        padding: 30px 45px;
+        text-align: center;
+        .team-mate-tittle{
+            padding: 30px 0px;
+            h3{
+                font-size: 35px;
+                font-weight: 700;
+            }
+            p{
+                font-size: 19px;
+            }
+        }
+        .team-mate-img{
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-around;
+            
+            .wrap-item{
+                padding: 0px 10px;
+                overflow: hidden;
+                width: 300px;
+                height: 400px;
+                transition: all .3s linear;
+                &:hover{
+                    .overlay-item-info{
+                        opacity: 1;
+                        transition: all .3s linear;
+                    }
+                }
+                .item-team-mate{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid white;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .overlay-item-info{
+                    width: 100%;
+                    height: 100%;
+                    font-size: 25px;
+                    color: #fff;
+                    font-weight: 500;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0,0,0,.9);
+                    opacity: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span{
+                        font-family: 'Grenze', serif;
+                        text-transform: uppercase;
+                        letter-spacing: .5px;
+                    }
+                }
+            }
+        }
+    }
+    .contact-us{
+    .contact-us-tittle{
+        padding: 30px 0px;
+        text-align: center;
+            h3{
+                font-size: 35px;
+                font-weight: 700;
+            }
+            p{
+                font-size: 19px;
+            }
+    }
+        .contact-item{
+            margin:30px 0px;
+            
+            .avatar{
+                width: 30%;
+                img{
+                    width: 100%;
+                }
+            }
+            .infomation{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 0px 5px 5px rgba(0,0,0,.15);
+                h3{
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                }
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                text-align: center;
+            }
+        }
+    }
+    .loaction-to-code{
+        .location-title{
+            text-align: center;
+            padding: 30px 0px;
+            h3{
+                font-size: 35px;
+                font-weight: 700;
+            }
+            p{
+                font-size: 19px;
+            }
+        }
+        .google-map{
+            margin-bottom: 30px;
+            
+            .location-img{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .location-iframe{
+                height: 100%;
+                iframe{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
