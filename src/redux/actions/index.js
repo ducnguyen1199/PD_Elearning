@@ -186,7 +186,7 @@ export const actGetInfoAccount = () => {
 					console.log(err);
 				});
 		};
-	} else return dispatch => {};
+	} else return dispatch => { };
 };
 export const actGetInfoAccountAdmin = data => {
 	return dispatch => {
@@ -259,14 +259,13 @@ export const actDeleteUserAPI = data => {
 export const actGetCourseWaitingAPI = data => {
 	return dispatch => {
 		let user;
-		if (window.location.pathname === '/admin/user') {
+		if (localStorage.getItem('userAdmin')) {
 			user = JSON.parse(localStorage.getItem('userAdmin'));
 		} else {
 			user = JSON.parse(localStorage.getItem('user'));
 		}
-
 		callApi('QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet', 'POST', data, {
-			Authorization: `Bearer ${user.accessToken}`,
+			Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZHVjZHVjIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiR1YiLCJuYmYiOjE1NzU3MjA4NTAsImV4cCI6MTU3NTcyNDQ1MH0.QyJUI3OnL6kpz1bpdDd49ZHFZUtm4c7kueMM-QyCC80",
 		})
 			.then(rs => {
 				dispatch({
@@ -275,18 +274,13 @@ export const actGetCourseWaitingAPI = data => {
 				});
 			})
 			.catch(err => {
-				console.log(err.response.data);
+				console.log(err.response);
 			});
 	};
 };
 export const actGetListCourseAccpetedAPI = data => {
 	return dispatch => {
-		let user;
-		if (window.location.pathname === '/home/profile') {
-			user = JSON.parse(localStorage.getItem('user'));
-		} else {
-			user = JSON.parse(localStorage.getItem('userAdmin'));
-		}
+		let user = window.location.pathname === '/home/profile' ? JSON.parse(localStorage.getItem('user')) : JSON.parse(localStorage.getItem('userAdmin'));
 		callApi('QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', 'POST', data, {
 			Authorization: `Bearer ${user.accessToken}`,
 		})
@@ -313,13 +307,13 @@ export const actCancelAttendCourse = data => {
 					});
 				});
 			})
-			.catch(err => {});
+			.catch(err => { });
 	};
 };
 export const actCancelAttendCourseAdmin = data => {
-	const userAdmin = JSON.parse(localStorage.getItem('userAdmin'));
+	let user = window.location.pathname === '/home/profile' ? JSON.parse(localStorage.getItem('user')) : JSON.parse(localStorage.getItem('userAdmin'));
 	return dispatch => {
-		callApi('QuanLyKhoaHoc/HuyGhiDanh', 'POST', data, { Authorization: `Bearer ${userAdmin.accessToken}` })
+		callApi('QuanLyKhoaHoc/HuyGhiDanh', 'POST', data, { Authorization: `Bearer ${user.accessToken}` })
 			.then(rs => {
 				successApi('HỦY GHI DANH THÀNH CÔNG.').then(() => {
 					dispatch({
@@ -599,3 +593,4 @@ export const actRejectUserRegisterApi = data => {
 			});
 	};
 };
+

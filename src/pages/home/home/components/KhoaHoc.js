@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 class KhoaHoc extends Component {
 	componentDidMount() {
 		$(function () {
-			$('.HeartAnimation').click(function () {
+			$('.HeartAnimation').click(() => {
 				$(this).toggleClass('animate');
 			});
 		});
