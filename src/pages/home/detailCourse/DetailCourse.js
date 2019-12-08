@@ -29,21 +29,24 @@ class DetailCourse extends Component {
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === id2;
 		}) === -1 ? (
-				<button className="btn--blue btnn" onClick={() => {
+			<button
+				className="btn--blue btnn"
+				onClick={() => {
 					this.props.addToCart({
 						course: {
 							...this.props.dataDetailCourse,
 							fee: Number(this.state.fee),
 						},
-					})
-				}}>
-					THÊM GIỎ HÀNG
+					});
+				}}
+			>
+				THÊM GIỎ HÀNG
 			</button>
-			) : (
-				<NavLink className="btn--purple btnn" to="/home/detail-cart">
-					TỚI GIỎ HÀNG
+		) : (
+			<NavLink className="btn--purple btnn" to="/home/detail-cart">
+				TỚI GIỎ HÀNG
 			</NavLink>
-			);
+		);
 	};
 	handleAddToCart = () => {
 		let id3 = this.props.propsCompnent.match.params.id;
@@ -51,17 +54,18 @@ class DetailCourse extends Component {
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === id3;
 			}) === -1 ? (
-					this.renderAddToCart()
-				) : (
-					<NavLink className="btn--white btnn" to="/home/profile">
-						TỚI HỒ SƠ
-				</NavLink>
-				)
-		) : (
 				this.renderAddToCart()
-			);
+			) : (
+				<NavLink className="btn--white btnn" to="/home/profile">
+					TỚI HỒ SƠ
+				</NavLink>
+			)
+		) : (
+			this.renderAddToCart()
+		);
 	};
 	render() {
+		console.log(window.location);
 		return (
 			<Fragment>
 				<Loading />
@@ -103,7 +107,7 @@ class DetailCourse extends Component {
 																<p>
 																	{this.props.dataDetailCourse.nguoiTao
 																		? this.props.dataDetailCourse.nguoiTao.hoTen
-																		: null}{' '}
+																		: ''}{' '}
 																</p>
 															</p>
 														</div>
@@ -117,8 +121,8 @@ class DetailCourse extends Component {
 																<p>
 																	{this.props.dataDetailCourse.danhMucKhoaHoc
 																		? this.props.dataDetailCourse.danhMucKhoaHoc
-																			.tenDanhMucKhoaHoc
-																		: null}{' '}
+																				.tenDanhMucKhoaHoc
+																		: ''}{' '}
 																</p>
 															</p>
 														</div>
@@ -128,7 +132,7 @@ class DetailCourse extends Component {
 													<div className="item-content ">
 														<div className="content">
 															<p>
-																Đánh giá {" "}
+																Đánh giá{' '}
 																<span>
 																	5 <i className="fa fa-star" aria-hidden="true"></i>
 																</span>
@@ -139,15 +143,6 @@ class DetailCourse extends Component {
 												<div className="col-3">
 													<div className="item-content">
 														<div className="content last-content">
-															{/* <button
-																className="btn--blue "
-																onClick={() => {
-																	this.props.addToCart();
-																}}
-															>
-																Thêm vào giỏ hàng{' '}
-																<i className="fa fa-shopping-cart" aria-hidden="true"></i>
-															</button> */}
 															{this.handleAddToCart()}
 														</div>
 													</div>
@@ -179,8 +174,8 @@ class DetailCourse extends Component {
 													<span>
 														{this.props.dataDetailCourse.danhMucKhoaHoc
 															? this.props.dataDetailCourse.danhMucKhoaHoc
-																.tenDanhMucKhoaHoc
-															: null}{' '}
+																	.tenDanhMucKhoaHoc
+															: ''}
 													</span>
 												</span>
 											</li>
@@ -241,7 +236,7 @@ const mapStateToProps = state => {
 		dataDetailCourse: state.khoaHocReducer.dataDetailCourse,
 		listCourse: state.khoaHocReducer.listCourse,
 		courseOfUser: state.NguoiDungReducer.accountInfo.chiTietKhoaHocGhiDanh,
-		listCart: state.GioHangReducer.listCart
+		listCart: state.GioHangReducer.listCart,
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(DetailCourse);

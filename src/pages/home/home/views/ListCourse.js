@@ -22,7 +22,11 @@ class ListCourse extends Component {
 			return listCourse.slice(0, 6).map((item, index) => {
 				return (
 					<div className="item-course" key={index}>
-						<KhoaHoc course={item} courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''} />
+						<KhoaHoc
+							course={item}
+							courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''}
+							history={this.props.history}
+						/>
 					</div>
 				);
 			});

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions/index';
 import { UncontrolledPopover, PopoverBody } from 'reactstrap';
-import Swal from 'sweetalert2';
 class ItemCourse extends Component {
 	goTop = () => {
 		window.scroll({
@@ -17,29 +16,34 @@ class ItemCourse extends Component {
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === this.props.course.maKhoaHoc;
 		}) === -1 ? (
-				<button className="btn--blue btnn" onClick={() => { this.props.addToCart(this.props) }}>
-					THÊM GIỎ HÀNG
+			<button
+				className="btn--blue btnn"
+				onClick={() => {
+					this.props.addToCart(this.props);
+				}}
+			>
+				THÊM GIỎ HÀNG
 			</button>
-			) : (
-				<NavLink className="btn--purple btnn" to="/home/detail-cart">
-					TỚI GIỎ HÀNG
+		) : (
+			<NavLink className="btn--purple btnn" to="/home/detail-cart">
+				TỚI GIỎ HÀNG
 			</NavLink>
-			);
+		);
 	};
 	handleAddToCart = () => {
 		return this.props.courseOfUser ? (
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === this.props.course.maKhoaHoc;
 			}) === -1 ? (
-					this.renderAddToCart()
-				) : (
-					<NavLink className="btn--white btnn" to="/home/profile" onClick={this.goTop}>
-						TỚI HỒ SƠ
-				</NavLink>
-				)
-		) : (
 				this.renderAddToCart()
-			);
+			) : (
+				<NavLink className="btn--white btnn" to="/home/profile" onClick={this.goTop}>
+					TỚI HỒ SƠ
+				</NavLink>
+			)
+		) : (
+			this.renderAddToCart()
+		);
 	};
 	renderPopover = () => {
 		let { course } = this.props;
