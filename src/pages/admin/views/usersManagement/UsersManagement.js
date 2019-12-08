@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import userManagementModal from '../../components/widthmodal/userManagementModal';
 import widthmodal from '../../components/widthmodal/widthmodal';
 import Loading from '../../../../components/Loading';
+import Swal from 'sweetalert2';
 let FormsModal = widthmodal(userManagementModal);
 const UsersManagement = props => {
 	const [state, setstate] = useState({ status: true, keyword: '', UserItem: '' });
@@ -61,7 +62,22 @@ const UsersManagement = props => {
 						<button
 							className="bttn btn--red"
 							onClick={() => {
-								props.deleteUser(item.taiKhoan);
+								Swal.fire({
+									position: 'center',
+									icon: 'success',
+									icon: 'warning',
+									html: `<h3 style="color:#f8bb86"><b>WARNING!</b></h3><b>Bạn có muốn xóa người dùng này không?</b>`,
+									showCancelButton: true,
+									confirmButtonColor: '#d33',
+									cancelButtonColor: '#3085d6',
+									confirmButtonText: 'Đồng ý',
+									cancelButtonText: 'Hủy',
+									reverseButtons: true,
+								}).then(rs => {
+									if (rs.value) {
+										props.deleteUser(item.taiKhoan);
+									}
+								});
 							}}
 						>
 							<i className="fa fa-trash" aria-hidden="true"></i>

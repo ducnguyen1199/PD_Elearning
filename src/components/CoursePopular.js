@@ -29,8 +29,8 @@ class CoursePopular extends Component {
 				<OwlCarousel
 					className="owl-theme"
 					loop={false}
-					margin={20}
-					items={4}
+					margin={5}
+					items={5}
 					slideBy={4}
 					nav
 					key={this.props.listCourse.length}

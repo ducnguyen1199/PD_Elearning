@@ -5,6 +5,7 @@ import widthmodal from '../../components/widthmodal/widthmodal';
 import coursesManagementModal from '../../components/widthmodal/coursesManagementModal';
 import { NavLink } from 'react-router-dom';
 import Loading from '../../../../components/Loading';
+import Swal from 'sweetalert2';
 const FormModal = widthmodal(coursesManagementModal);
 const CoursesManagement = props => {
 	const [state, setstate] = useState({ keyword: '', status: true });
@@ -64,7 +65,22 @@ const CoursesManagement = props => {
 								<button
 									className="bttn btn--red"
 									onClick={() => {
-										props.onDelete(item.maKhoaHoc);
+										Swal.fire({
+											position: 'center',
+											icon: 'success',
+											icon: 'warning',
+											html: `<h3 style="color:#f8bb86"><b>WARNING!</b></h3><b>Bạn có muốn xóa khóa học này không?</b>`,
+											showCancelButton: true,
+											confirmButtonColor: '#d33',
+											cancelButtonColor: '#3085d6',
+											confirmButtonText: 'Đồng ý',
+											cancelButtonText: 'Hủy',
+											reverseButtons: true,
+										}).then(rs => {
+											if (rs.value) {
+												props.onDelete(item.maKhoaHoc);
+											}
+										});
 									}}
 								>
 									<i class="fa fa-trash "></i>

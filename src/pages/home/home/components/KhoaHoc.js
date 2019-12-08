@@ -3,46 +3,41 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../../redux/actions/index';
 import { NavLink } from 'react-router-dom';
-import Swal from 'sweetalert2';
 class KhoaHoc extends Component {
-	componentDidMount() {
-		$(function () {
-			$('.HeartAnimation').click(() => {
-				$(this).toggleClass('animate');
-			});
-		});
-	}
+	componentDidMount() {}
 
 	renderAddToCart = () => {
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === this.props.course.maKhoaHoc;
 		}) === -1 ? (
-				<button className="btn--blue btnn" onClick={() => {
-					this.props.addToCart(this.props)
-				}
-				}>
-					THÊM GIỎ HÀNG
+			<button
+				className="btn--blue btnn"
+				onClick={() => {
+					this.props.addToCart(this.props);
+				}}
+			>
+				THÊM GIỎ HÀNG
 			</button>
-			) : (
-				<NavLink className="btn--purple btnn" to="/home/detail-cart">
-					TỚI GIỎ HÀNG
+		) : (
+			<NavLink className="btn--purple btnn" to="/home/detail-cart">
+				TỚI GIỎ HÀNG
 			</NavLink>
-			);
+		);
 	};
 	handleAddToCart = () => {
 		return this.props.courseOfUser ? (
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === this.props.course.maKhoaHoc;
 			}) === -1 ? (
-					this.renderAddToCart()
-				) : (
-					<NavLink className="btn--black btnn" to="/home/profile">
-						TỚI HỒ SƠ CÁ NHÂN
-				</NavLink>
-				)
-		) : (
 				this.renderAddToCart()
-			);
+			) : (
+				<NavLink className="btn--black btnn" to="/home/profile">
+					TỚI HỒ SƠ CÁ NHÂN
+				</NavLink>
+			)
+		) : (
+			this.renderAddToCart()
+		);
 	};
 	render() {
 		let { course } = this.props;
@@ -57,8 +52,8 @@ class KhoaHoc extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="main-content">
-					<div className="relative">
+				<div className="kh-main-content">
+					<div className="kh-relative">
 						<div className="status-course">
 							<span>New</span>
 							{/* <span>HOT</span> */}
@@ -108,7 +103,13 @@ class KhoaHoc extends Component {
 								</NavLink>
 								{this.handleAddToCart()}
 								<div className="like">
-									<div className="HeartAnimation"></div>
+									<div
+										className="HeartAnimation"
+										id={`heart_${course.maKhoaHoc}`}
+										onClick={() => {
+											$(`#heart_${course.maKhoaHoc}`).toggleClass('animate');
+										}}
+									></div>
 								</div>
 							</div>
 						</div>

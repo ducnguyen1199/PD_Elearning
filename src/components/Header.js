@@ -92,7 +92,7 @@ class Header extends Component {
 	};
 	savePrevPage = () => {
 		if (window.location.pathname !== '/home/dang-ky' && window.location.pathname !== '/home/dang-nhap')
-			localStorage.setItem('prevPage', JSON.stringify(window.location.pathname));
+			localStorage.setItem('prevPage', JSON.stringify(window.location.pathname + window.location.search));
 	};
 	renderAccount = () => {
 		if (localStorage.getItem('user')) {
