@@ -55,7 +55,7 @@ export default class About extends Component {
                                         <iframe src="https://www.youtube.com/embed/bxtMvIDLu2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div className="video" >
-                                        <iframe src="https://www.youtube.com/embed/pkDjBE4JgWE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/Nr6FdfxrC_w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
 

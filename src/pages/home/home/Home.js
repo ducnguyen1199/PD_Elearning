@@ -21,7 +21,7 @@ export default class Home extends Component {
 				<div className="home">
 					<Intro />
 					<Category />
-					<ListCourse />
+					<ListCourse history={this.props.propsCompnent.history} />
 					<InfoElearning />
 					<StepBuyCourse />
 					<Feel />
