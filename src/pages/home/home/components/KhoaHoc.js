@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../../redux/actions/index';
 import { NavLink } from 'react-router-dom';
 class KhoaHoc extends Component {
-	componentDidMount() {
-		$(function() {
-			$('.HeartAnimation').click(() => {
-				$(this).toggleClass('animate');
-			});
-		});
-	}
+	componentDidMount() {}
 
 	renderAddToCart = () => {
 		return this.props.listCart.findIndex(item => {
@@ -109,7 +103,13 @@ class KhoaHoc extends Component {
 								</NavLink>
 								{this.handleAddToCart()}
 								<div className="like">
-									<div className="HeartAnimation"></div>
+									<div
+										className="HeartAnimation"
+										id={`heart_${course.maKhoaHoc}`}
+										onClick={() => {
+											$(`#heart_${course.maKhoaHoc}`).toggleClass('animate');
+										}}
+									></div>
 								</div>
 							</div>
 						</div>
