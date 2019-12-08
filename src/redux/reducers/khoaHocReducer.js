@@ -48,9 +48,10 @@ const KhoaHocReducer = (state = initialState, action) => {
 			state.listUserWaiting = action.listUserWaiting;
 			return { ...state };
 		case actionTypes.DELETE_USER_REGISTER:
+			console.log(action.data);
 			let listUserWaiting = [...state.listUserWaiting];
 			let indexxx = state.listUserWaiting.findIndex(item => {
-				return item.maKhoaHoc === action.data;
+				return item.taiKhoan === action.data;
 			});
 			listUserWaiting.splice(indexxx, 1);
 			state.listUserWaiting = listUserWaiting;
