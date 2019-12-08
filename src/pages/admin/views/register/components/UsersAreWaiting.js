@@ -14,14 +14,14 @@ const UsersAreWaiting = props => {
 						<td>{item.biDanh}</td>
 						<td>
 							<i
-								class="fa fa-check"
+								className="fa fa-check"
 								aria-hidden="true"
 								onClick={() => {
 									props.acceptUserRegister({ maKhoaHoc: props.maKhoaHoc, taiKhoan: item.taiKhoan });
 								}}
 							></i>
 							<i
-								class="fa fa-times"
+								className="fa fa-times"
 								aria-hidden="true"
 								onClick={() => {
 									Swal.fire({
@@ -52,7 +52,7 @@ const UsersAreWaiting = props => {
 		}
 	};
 	return (
-		<table class="table table-striped">
+		<table className="table table-striped">
 			<thead>
 				<tr>
 					<th>STT</th>
