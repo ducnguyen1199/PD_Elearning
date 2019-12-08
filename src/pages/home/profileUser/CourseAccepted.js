@@ -10,7 +10,6 @@ class CourseAccepted extends Component {
         let { listCourseAccepted } = this.props
         if (listCourseAccepted) {
             return this.props.listCourse.filter(item => {
-
                 let index = listCourseAccepted.findIndex(item2 => {
                     return item.maKhoaHoc === item2.maKhoaHoc
                 })
