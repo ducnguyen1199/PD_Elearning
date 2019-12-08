@@ -55,9 +55,9 @@ class FormSignUp extends Component {
 		if (value !== '') {
 			switch (name) {
 				case 'taiKhoan':
-					if (value.length < 4 || value.length > 9) {
+					if (value.length < 4 || value.length > 16) {
 						isValid = false;
-						massage = placeholder + 'phải có độ dài từ 4 đến 9 kí tự.';
+						massage = placeholder + 'phải có độ dài từ 4 đến 16 kí tự.';
 					} else if (!value.match('^[a-z0-9_-]{3,16}$')) {
 						isValid = false;
 						massage = placeholder + ' không đúng định dạng.';
@@ -76,8 +76,8 @@ class FormSignUp extends Component {
 					if (
 						!value.match(
 							'^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
-							'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
-							'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+								'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+								'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
 						)
 					) {
 						isValid = false;
@@ -94,7 +94,7 @@ class FormSignUp extends Component {
 					if (
 						!value.match(
 							'^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@' +
-							'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
+								'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
 						)
 					) {
 						isValid = false;
@@ -136,10 +136,10 @@ class FormSignUp extends Component {
 		return this.state.whenSubmit
 			? false
 			: !!this.state.values.taiKhoan ||
-			!!this.state.values.matKhau ||
-			!!this.state.values.hoTen ||
-			!!this.state.values.soDT ||
-			!!this.state.values.email;
+					!!this.state.values.matKhau ||
+					!!this.state.values.hoTen ||
+					!!this.state.values.soDT ||
+					!!this.state.values.email;
 	};
 	handleOnSubmit = e => {
 		e.preventDefault();
@@ -182,8 +182,8 @@ class FormSignUp extends Component {
 								{errors.taiKhoan !== '' ? (
 									<div className="massage-error">{errors.taiKhoan}</div>
 								) : (
-										<div className="massage-error-hide">massage-error-hide</div>
-									)}
+									<div className="massage-error-hide">massage-error-hide</div>
+								)}
 								<div>
 									<TextField
 										id="standard-basic"
@@ -200,8 +200,8 @@ class FormSignUp extends Component {
 								{errors.matKhau !== '' ? (
 									<div className="massage-error">{errors.matKhau}</div>
 								) : (
-										<div className="massage-error-hide">massage-error-hide</div>
-									)}
+									<div className="massage-error-hide">massage-error-hide</div>
+								)}
 								<div>
 									<TextField
 										id="standard-basic"
@@ -235,8 +235,8 @@ class FormSignUp extends Component {
 								{errors.hoTen !== '' ? (
 									<div className="massage-error">{errors.hoTen}</div>
 								) : (
-										<div className="massage-error-hide">massage-error-hide</div>
-									)}
+									<div className="massage-error-hide">massage-error-hide</div>
+								)}
 								<div>
 									<TextField
 										id="standard-basic"
@@ -252,8 +252,8 @@ class FormSignUp extends Component {
 								{errors.soDT !== '' ? (
 									<div className="massage-error">{errors.soDT}</div>
 								) : (
-										<div className="massage-error-hide">massage-error-hide</div>
-									)}
+									<div className="massage-error-hide">massage-error-hide</div>
+								)}
 								<div>
 									<TextField
 										id="standard-basic"
@@ -269,8 +269,8 @@ class FormSignUp extends Component {
 								{errors.email !== '' ? (
 									<div className="massage-error">{errors.email}</div>
 								) : (
-										<div className="massage-error-hide">massage-error-hide</div>
-									)}
+									<div className="massage-error-hide">massage-error-hide</div>
+								)}
 							</div>
 						</div>
 						<button className="pulse" onClick={this.handleOnSubmit}>

@@ -572,7 +572,7 @@ export const actAcceptUserRegisterApi = data => {
 				successApi('ĐÃ GHI DANH HỌC VIÊN').then(() => {
 					dispatch({
 						type: actionTypes.DELETE_USER_REGISTER,
-						data: rs.data.maKhoaHoc,
+						data: data.taiKhoan,
 					});
 				});
 			})
@@ -593,7 +593,7 @@ export const actRejectUserRegisterApi = data => {
 				successApi('ĐÃ HỦY GHI DANH HỌC VIÊN').then(() => {
 					dispatch({
 						type: actionTypes.DELETE_USER_REGISTER,
-						data: data.maKhoaHoc,
+						data: data.taiKhoan,
 					});
 				});
 			})
