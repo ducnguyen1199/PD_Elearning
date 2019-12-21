@@ -11,7 +11,7 @@ export default function Footer() {
 						<h1>Elearning</h1>
 					</div>
 					<div className="row">
-						<div className="col-4 chinh-sach">
+						<div className="col-md-4 col-12 chinh-sach">
 							<h5>Chính sách &amp; quy định</h5>
 							<ol className="list-unstyled">
 								<li>
@@ -28,7 +28,7 @@ export default function Footer() {
 								</li>
 							</ol>
 						</div>
-						<div className="lien-ket col-4">
+						<div className="lien-ket col-md-4 col-12">
 							<h5>Liên kết</h5>
 							<div className="d-flex justify-content-center">
 								<a href="https://www.facebook.com/profile.php?id=100004474485332" className="facebook">
@@ -39,7 +39,7 @@ export default function Footer() {
 								</a>
 							</div>
 						</div>
-						<div className="col-4 lien-he text-left">
+						<div className="col-md-4 col-12 lien-he text-left">
 							<h5 className="d-flex justify-content-center">Liên hệ</h5>
 							<ol className="list-unstyled">
 								<li>
