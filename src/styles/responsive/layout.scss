@@ -1,5 +1,253 @@
 @include mediaQuery('xl'){
     .header{
-        display: none;
+        .navbar{
+            padding: 0 50px;
+            .navbar-brand {
+                width: 175px;
+                img {
+                    width: 35px;
+                    margin-right: 5px;
+                }
+                h1 {
+                    font-size:  $fs-lg - 5;
+                }
+            }
+        }
+    }
+}
+@include mediaQuery('lg'){
+    .header{
+        .navbar{
+            .navbar-nav{
+                .nav-item{
+                    margin-right: 2px;
+                    .nav-link{
+                        font-size:$fs-md - 3;
+                    }
+                }
+            }
+            .navbar-right{
+                .cart{
+                    width: 25px;
+                    height: 25px;
+                    font-size:13px;
+                    margin-right: 20px;
+                    .amount{
+                        font-size: 7px;
+                        width:12px;
+                        height: 12px;
+                        line-height: 12px;
+                        
+                    }
+                }
+                .bttn{
+                    padding: 7px 15px;
+                    font-size:10px;
+                }
+            } 
+        }
+    }
+    .footer{
+        .main-content {
+            h5 {
+                font-size: 17px;
+            }
+            .logo-title {
+                img {
+                    width: 35px;
+                    margin-right: 5px;
+                }
+                h1 {
+                    @include text($color-pr-3, $fs-lg - 3, $fw-bold-1);
+                }
+            }
+            .chinh-sach {
+                li {
+                    a {
+                        font-size: 13px;
+                    }
+                }
+            }
+            .lien-ket {
+                a {
+                    height: 40px;
+                    width: 40px;
+                    font-size: 20px;
+                }
+            }
+            .lien-he { 
+                margin-left: -25px;
+                li {
+                    i {
+                        font-size: 14px;
+                        color: $color-pr-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mediaQuery('md'){
+    .header{
+        .navbar {
+            padding: 0 20px;
+            .collapse {
+                visibility: hidden;
+                position: absolute;
+                top:46px;
+                left:0;
+                width:100%;
+                background: white;
+                box-shadow: 0px 5px 5px 0 #0000005e;
+                padding: 10px 30px;
+                text-align: left;
+                z-index: -1;
+            }
+            .collapse.show {
+                visibility: visible;
+                display: block;
+            }
+            .collapsing {
+                overflow: hidden;
+                -webkit-transition-duration: 0s;
+                transition-duration: 0s;
+            }
+            .navbar-nav{
+                .nav-item{
+                .nav-link{
+                    color:black!important;
+                }
+                }
+            }
+            .navbar-right{
+                .cart{
+                    .total{
+                        font-size: $fs-md-lg - 3!important;
+                        margin-bottom: 15px;
+                        &::after {
+                            bottom: -7px;
+                        }
+                    }
+                    .mct-cart{
+                        transform: translateX(-65px);
+                        .no-course{
+                            font-size: $fs-md - 3;
+                        }
+                        .bttn {
+                            width: 80%;
+                            margin: 0 auto;
+                            padding: 7px 0;
+                            font-size: $fs-md;
+                        }
+                        .ct-cart{
+                            padding: 7px 15px;
+                            max-height: 240px;
+                            .item-cart{
+                                margin-bottom: 15px;
+                                &::after {
+                                    bottom: -7px;
+                                }
+                                img {
+                                    width: 80px;
+                                    height: 60px;
+                                }
+                                .ct-item-cart {
+                                    align-self: center;
+                                    margin-left: 10px;
+                                    h5 {
+                                        @include text(black, $fs-md - 3, $fw-bold-2);
+                                    }
+                                    p {
+                                        @include text(black, $fs-sm - 1, $fw-thin);
+                                    }
+                                    .fee {
+                                        @include text($color-pr-1, $fs-md-lg - 3, $fw-bold-1);
+                                    }
+                                }
+                                i {
+                                    font-size: $fs-md-lg - 5;
+                                    color: rgba(0, 0, 0, 0.7);
+                                    cursor: pointer;
+                                    &:hover {
+                                        color: rgba(255, 0, 0, 0.5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .account{
+                    .user-signin{
+                        display: flex!important;
+                    }
+                    .bttn{
+                        display: none!important;
+                    }
+                    .account-img{
+                        span{
+                            display: none;
+                        }
+                    }
+                    .account-content{
+                        transform: translateX(-147px);
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        .main-content {
+            h5 {
+                font-size: 17px;
+            }
+            .logo-title {
+                img {
+                    width: 35px;
+                    margin-right: 5px;
+                }
+                h1 {
+                    @include text($color-pr-3, $fs-lg - 3, $fw-bold-1);
+                }
+            }
+            .chinh-sach {
+                li {
+                    a {
+                        font-size: 13px;
+                    }
+                }
+            }
+            .lien-ket {
+                a {
+                    height: 40px;
+                    width: 40px;
+                    font-size: 20px;
+                }
+                margin-bottom: 40px;
+            }
+            .lien-he { 
+                margin-left: 0;
+                text-align: center!important;
+                li {
+                    i {
+                        font-size: 14px;
+                        color: $color-pr-2;
+                    }
+                }
+            }
+        }
+        .second-content {
+            display: block!important;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            a {
+                width: 120px;
+                margin-bottom: 20px;
+            }
+            p {
+                text-align: center;
+            }
+        }
     }
 }

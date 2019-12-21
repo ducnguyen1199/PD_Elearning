@@ -12,6 +12,9 @@
 	}
 	&.header-transparent {
 		background: transparent;
+		.fa-bars{
+			color:white;
+		}
 		.setting {
 			color: rgba(255, 255, 255, 0.8) !important;
 			&:hover {
@@ -37,9 +40,11 @@
 		}
 	}
 	.navbar {
+		position: relative;
 		padding: 0 100px;
-		align-items: flex-end;
-		box-shadow: 0 0 10px 0 #0000005e;
+		align-items: center;
+		box-shadow: 0 0 5px 0 #0000005e;
+		flex-wrap: nowrap;
 		.navbar-brand {
 			width: 250px;
 			display: flex;
@@ -55,8 +60,6 @@
 			}
 		}
 		.navbar-nav {
-			padding-bottom: 7px;
-			margin-left: 20px;
 			.nav-item {
 				margin-right: 5px;
 				.nav-link {
@@ -90,6 +93,18 @@
 			}
 			.account {
 				position: relative;
+				.user-signin{
+					display: none;
+    				cursor: pointer;
+    				width: 30px;
+    				height: 30px;
+    				padding: 5px;
+    				border-radius: 50%;
+    				background: rgba(0, 0, 0, 0.3);
+    				justify-content: center;
+					align-items: center;
+					color:white;
+				}
 				.account-img {
 					img {
 						width: 30px;
@@ -248,7 +263,7 @@
 					content: '';
 				}
 				img {
-					width: 80px;
+					width: 100px;
 					height: 80px;
 				}
 				.ct-item-cart {
