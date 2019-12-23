@@ -129,6 +129,9 @@ class Header extends Component {
 		} else {
 			return (
 				<div className="account">
+					<NavLink to="/home/dang-nhap" onClick={this.savePrevPage}>
+						<i class="fa fa-user user-signin" aria-hidden="true"></i>
+					</NavLink>
 					<NavLink className="btn--blue bttn " to="/home/dang-nhap" onClick={this.savePrevPage}>
 						SIGN IN
 					</NavLink>
@@ -154,11 +157,7 @@ class Header extends Component {
 					'header-transparent': this.state.transparent,
 				})}
 			>
-				<nav className="navbar navbar-expand-sm">
-					<NavLink className="navbar-brand" to="/home" onClick={this.goTop}>
-						<img src="../../../img/logo.png" className="img-fluid" />
-						<h1>Elearning</h1>
-					</NavLink>
+				<nav className="navbar navbar-expand-md">
 					<button
 						className="navbar-toggler d-lg-none"
 						type="button"
@@ -168,8 +167,12 @@ class Header extends Component {
 						aria-expanded="false"
 						aria-label="Toggle navigation"
 					>
-						<span className="navbar-toggler-icon" />
+						<i className="fa fa-bars"></i>
 					</button>
+					<NavLink className="navbar-brand" to="/home" onClick={this.goTop}>
+						<img src="../../../img/logo.png" className="img-fluid" />
+						<h1>Elearning</h1>
+					</NavLink>
 					<div className="collapse navbar-collapse" id="collapsibleNavId">
 						<ul className="navbar-nav mr-auto mt-2 mt-lg-0">
 							<li className="nav-item">
@@ -200,7 +203,7 @@ class Header extends Component {
 							</li>
 						</ul>
 					</div>
-					<div className="navbar-right ml-auto">
+					<div className="navbar-right">
 						<div className="cart">
 							<i className="fa fa-shopping-cart" aria-hidden="true"></i>
 							<div
