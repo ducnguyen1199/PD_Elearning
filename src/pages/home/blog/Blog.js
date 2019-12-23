@@ -27,11 +27,11 @@ export default class Blog extends Component {
 					</div>
 					<div className="blog-content">
 						<div className="row">
-							<div className="col-9">
+							<div className="col-12 col-lg-9">
 								<BlogMainContent />
 							</div>
 
-							<div className="col-3">
+							<div className="col-lg-3 d-none d-lg-block">
 								<BlogSideBar />
 							</div>
 						</div>

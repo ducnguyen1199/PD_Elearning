@@ -1,0 +1,73 @@
+@include mediaQuery('xl'){
+    .list-course-popular {
+        padding: 0 20px;
+    }
+    .wrap-head {
+        .header-head {
+            height: 250px;
+            .title {
+                font-size: $fs-lg - 5;
+                h4 {
+                    @include text($color-pr-1, $fs-md, normal);
+                    margin-top: 10px;
+                    a {
+                        font-size: $fs-md;
+                    }
+                }
+            }
+        }
+    }
+}
+@include mediaQuery('lg'){
+    .title {
+        &::before,
+        &::after {
+          width: 100px!important;
+        }
+    }
+    .wrap-head {
+        .header-head {
+            height: 200px;
+        }
+    }
+}
+@include mediaQuery('sm'){
+    .list-course-popular {
+        padding: 0 2px;
+        .allCourse-item{
+            padding: 0 2px!important;
+        }
+        .owl-nav{
+            display: none;
+        }
+    }
+    .title {
+        font-size: 20px!important;
+        &::before,
+        &::after {
+            margin-right: 5px!important;
+            width:50px!important;
+        }
+        &::after {
+            margin-left: 5px!important;
+        }
+    }
+    .subtitle{
+        display: none;
+    }
+    .wrap-head {
+        .header-head {
+            height: 150px;
+            .title {
+                font-size: $fs-md-lg;
+                h4 {
+                    @include text($color-pr-1, $fs-md - 3, normal);
+                    margin-top: 0;
+                    a {
+                        font-size: $fs-md - 3;
+                    }
+                }
+            }
+        }
+    }
+}

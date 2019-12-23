@@ -25,9 +25,7 @@ export default class StepBuyCourse extends Component {
 							STEP
 						</div>
 						<p>
-							Choose the course
-							<br />
-							you want
+							Choose <br />the course
 						</p>
 					</div>
 					<div className="line"></div>
