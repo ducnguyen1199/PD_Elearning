@@ -21,10 +21,11 @@
 		position: relative;
 		input,
 		button {
-			margin: 0 5px;
+			padding: 7px 15px;
+			width:30%;
 		}
-		input {
-			padding: 5px 10px;
+		input{
+			width: 65%
 		}
 		margin-bottom: 30px;
 		&::after {

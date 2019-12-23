@@ -33,6 +33,23 @@ class CoursePopular extends Component {
 					items={5}
 					slideBy={4}
 					nav
+					responsive = {{
+						1200:{
+							items:5
+						},
+						992:{
+							items:4
+						},
+						767:{
+							items:3
+						},
+						576:{
+							items:2
+						},
+						0:{
+							items:2
+						}
+					}}
 					key={this.props.listCourse.length}
 				>
 					{this.renderPopularCourse()}

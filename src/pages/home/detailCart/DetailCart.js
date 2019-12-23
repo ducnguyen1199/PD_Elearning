@@ -39,8 +39,8 @@ class DetailCart extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="row">
-						<div className="list-cart">
+					<div className="row justify-content-around">
+						<div className="list-cart col-12 col-lg-8">
 							<div className="content">
 								<div className="header-list-cart">
 									<p>KHÓA HỌC</p>
@@ -55,7 +55,7 @@ class DetailCart extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="bill">
+						<div className="bill col-lg-4 col-11">
 							<BillCart
 								listCart={this.props.listCart}
 								giamGia={this.props.giamGia}

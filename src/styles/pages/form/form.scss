@@ -67,6 +67,10 @@
 					color: $color-pr-2;
 				}
 			}
+			.MuiFormControl-root{
+				margin-top: 0;
+				width: 80%;
+			}
 		}
 	}
 }

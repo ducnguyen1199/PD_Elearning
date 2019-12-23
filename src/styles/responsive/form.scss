@@ -1,0 +1,58 @@
+@include mediaQuery('lg'){
+    .form {
+        .main-content {
+            &.signup {
+                form {
+                    width: 500px !important;
+                    .gr-input {
+                        width: 50%;
+                    }
+                }
+            }
+            form {
+                width: 350px;
+                border-radius: 10px;
+                padding: 10px 0;
+                box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+                h4 {
+                   font-size: 20px;
+                }
+                button {
+                    margin: 20px 0;
+                    padding: 5px 30px;
+                }
+                .massage-error {
+                    margin-top: -10px;
+                }
+                .massage-error-hide {
+                    margin-top: -10px;
+                }
+                .go-to-form-another {
+                    @include text($color-pr-1, $fs-sm, normal);
+                }
+                .MuiFormControl-root{
+                    transform: scale(0.8);
+                    margin-top: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@include mediaQuery('md'){
+    .form {
+        .main-content {
+            &.signup {
+                form {
+                    width: 400px !important;
+                    .gr-input {
+                        width: 50%;
+                    }
+                }
+            }
+            form {
+                width: 300px;
+            }
+        }
+    }
+}
