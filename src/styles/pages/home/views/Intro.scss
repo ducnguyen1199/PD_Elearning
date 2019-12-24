@@ -55,7 +55,9 @@
 				.content-search {
 					background: white;
 					overflow: overlay;
-					max-height: 168px;
+					max-height: 115px;
+					border-top:1px solid rgb(124, 124, 124);
+					border-bottom:1px solid rgb(124, 124, 124);
 					&::-webkit-scrollbar {
 						width: 5px;
 					}

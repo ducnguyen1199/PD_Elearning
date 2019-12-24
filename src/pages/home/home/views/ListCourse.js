@@ -21,7 +21,7 @@ class ListCourse extends Component {
 		if (listCourse.length) {
 			return listCourse.slice(0, 6).map((item, index) => {
 				return (
-					<div className="item-course" key={index}>
+					<div className="item-course col-12 col-lg-4" key={index}>
 						<KhoaHoc
 							course={item}
 							courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''}
@@ -70,7 +70,7 @@ class ListCourse extends Component {
 					<br /> Easily register for an online course
 				</p>
 				<div className="lc-main-content">
-					<div className="lc-content">{this.renderListCourse()}</div>
+					<div className="lc-content row">{this.renderListCourse()}</div>
 					<div className="lc-btn-group">
 						<button className="btn--blue btnn" id="loadMore">
 							SHOWN MORE <i className="fa fa-angle-double-down"></i>

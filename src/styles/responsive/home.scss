@@ -1,0 +1,279 @@
+@include mediaQuery('xl'){
+    .category{
+        padding: 30px;
+    }
+    .item-category{
+        height: 140px;
+        width: 140px;
+        .content h6{
+            font-size: 16px;
+        }
+    }
+    .list-course{
+        padding: 30px;
+        .item-course {
+            padding: 2px;
+        }
+    }
+    .info-elearning {
+        .ie-content {
+            padding: 50px 100px;
+            .icon-group {
+                i {
+                    font-size: 60px;
+                }
+                .name-icon {
+                    font-size: 20px;
+                }
+                .amount {
+                    font-size: $fs-xl;
+                }
+            }
+        }
+    }
+    .stepbuycourse {
+        padding: 40px 30px 30px;
+        .content{
+            margin-top:60px;
+            .step-group {
+                div {
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    @include text(white, $fs-md, $fw-bold-1);
+                    margin-bottom: 20px;
+                }
+                p {
+                    @include text(rgba(0, 0, 0, 0.7), $fs-md - 2, $fw-bold-2);
+                    line-height: 17px;
+                }
+            }
+        }
+    }
+    .feel {
+        margin-top: 40px;
+        padding: 0 30px 120px;
+        position: relative;
+        text-align: center;
+        .main-content{
+            .carousel{
+                .carousel-control-prev,
+                .carousel-control-next {
+                    top: -65px;
+                    font-size: 80px;
+                }
+                .carousel-control-prev {
+                    left: -70px;
+                }
+                .carousel-control-next {
+                    right: -70px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaQuery('lg'){
+    .category{
+        .title {
+            &::before,
+            &::after {
+              width: 200px;
+            }
+        }
+        .container {
+            margin-top: 30px;
+        }
+    }
+    .item-category{
+        height: 100px;
+        width: 100px;
+        .content h6{
+            font-size: 14px;
+        }
+    }
+    .feel {
+        margin-top: 40px;
+        padding: 0 30px 120px;
+        position: relative;
+        text-align: center;
+        .main-content{
+            .carousel{
+                .content {
+                    @include text(gray, $fs-md, $fw-thin);
+                    line-height: 25px;
+                    margin-bottom: 20px;
+                }
+                .carousel-control-prev,
+                .carousel-control-next {
+                    top: -65px;
+                    font-size: 70px;
+                }
+                .carousel-control-prev {
+                    left: -60px;
+                }
+                .carousel-control-next {
+                    right: -60px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaQuery('md'){
+    .intro{
+        .content{
+            .head-title{
+                font-size: 30px;
+            }
+            .head-subtitle{
+                font-size: 12px;
+            }
+            .form-group{
+                .search{
+                    input{
+                        padding: 15px 7px;
+                        font-size: 14px;
+                    }
+                    .content-search{
+                        width:125%;
+                        max-height: 115px;
+                    }
+                }
+                .bttn{
+                    font-size: 15px;
+                    height:35px;
+                    line-height: 35px;
+                    padding: 0 10px;
+                }
+            } 
+        }
+    }
+    .item-category{
+        margin-bottom:10px;
+        border-radius: 10px;
+    }
+    .subtitle{
+        font-size: 12px!important;
+    }
+    .list-course {
+        .lc-main-content {
+            .lc-btn-group {
+                text-align: center;
+                .btnn {
+                    font-size: $fs-md - 3;
+                    margin: 0 5px;
+                    font-family: $font-title;
+                    font-weight: $fw-bold-1;
+                    display: inline-flex;
+                    i {
+                        font-weight: normal;
+                        font-size: $fs-md;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .info-elearning {
+        .ie-content {
+            padding: 25px 50px;
+            .icon-group {
+                i {
+                    font-size: 40px;
+                }
+                .name-icon {
+                    font-size: 16px;
+                }
+                .amount {
+                    font-size: $fs-xl - 10;
+                }
+            }
+        }
+    }
+    .feel {
+        margin-top: 40px;
+        padding: 0 30px 120px;
+        position: relative;
+        text-align: center;
+        .main-content{
+            .carousel{
+                .content {
+                    @include text(gray, $fs-md, $fw-thin);
+                    line-height: 25px;
+                    margin-bottom: 20px;
+                }
+                .carousel-control-prev,
+                .carousel-control-next {
+                    top: -65px;
+                    font-size: 50px;
+                }
+                .carousel-control-prev {
+                    left: -40px;
+                }
+                .carousel-control-next {
+                    right: -40px;
+                }
+            }
+        }
+    }
+}
+
+@include mediaQuery('sm'){
+    .intro{
+        .content{
+            .head-title{
+                font-size: 18px;
+            }
+            .head-subtitle{
+                font-size: 10px;
+            }
+            .form-group{
+                .search{
+                    input{
+                        padding: 10px 5px;
+                        font-size: 12px;
+                    }
+                    .content-search{
+                        width:125%;
+                        max-height: 125px;
+                        a{
+                            padding: 3px 20px;
+                            font-size: 12px;
+                        }
+                        &::-webkit-scrollbar {
+                            width: 3px;
+                        }
+                        &::-webkit-scrollbar-track {
+                            background: #f1f1f1;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background: rgb(121, 115, 115);
+                            height: 20px;
+                        }
+                        &::-webkit-scrollbar-thumb:hover {
+                            background: #555;
+                        }
+                    }
+                }
+                .bttn{
+                    font-size: 11px;
+                    height:30px;
+                    line-height: 30px;
+                    padding: 0 10px;
+                }
+            } 
+        }
+        .arrow-down{
+            bottom:50px
+        }
+        .arrow-down span {
+            width: 30px;
+            height: 30px;
+            border-bottom: 1px solid $color-pr-3;
+            border-right: 1px solid $color-pr-3;
+            margin: -20px;
+        }
+    }
+}
+

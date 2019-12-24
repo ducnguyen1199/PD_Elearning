@@ -26,7 +26,7 @@ class Category extends Component {
 					Our category
 				</h3>
 				<div className="container">
-					<div className="d-flex justify-content-around" data-aos="fade-right" data-aos-duration="1000">
+					<div className="row" data-aos="fade-right" data-aos-duration="1000">
 						{this.renderCategoryHTML()}
 					</div>
 				</div>

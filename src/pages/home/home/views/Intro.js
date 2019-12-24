@@ -65,7 +65,7 @@ class Intro extends Component {
 									className="form-control"
 									onKeyUp={this.handleOnChange}
 								></input>
-								<div className="content-search">{this.renderContenSearch()}</div>
+								{this.state.keyword ? <div className="content-search">{this.renderContenSearch()}</div>: ""}
 							</div>
 							<NavLink to={`/home/courses/all?${this.state.keyword}`} className="btn--purple bttn">
 								SEARCH
