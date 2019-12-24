@@ -26,13 +26,33 @@ class CoursePopular extends Component {
 		return (
 			<section className="list-course-popular">
 				<h1 className="title">CÓ THỂ BẠN QUAN TÂM</h1>
+
 				<OwlCarousel
 					className="owl-theme"
 					loop={false}
 					margin={5}
 					items={5}
+
 					slideBy={4}
 					nav
+					responsiveClass
+					responsive={{
+						0: {
+							items: 1,
+							slideBy: 1,
+							dots: false
+						},
+						600: {
+							items: 2,
+							slideBy: 2,
+							dots: false
+						},
+						992: {
+							items: 5,
+							slideBy: 5
+						}
+					}}
+
 					key={this.props.listCourse.length}
 				>
 					{this.renderPopularCourse()}
