@@ -35,44 +35,23 @@ class CoursePopular extends Component {
 
 					slideBy={4}
 					nav
-<<<<<<< HEAD
-					responsiveClass
 					responsive={{
-						0: {
-							items: 1,
-							slideBy: 1,
-							dots: false
-						},
-						600: {
-							items: 2,
-							slideBy: 2,
-							dots: false
+						1200: {
+							items: 5
 						},
 						992: {
-							items: 5,
-							slideBy: 5
+							items: 4
+						},
+						767: {
+							items: 3
+						},
+						576: {
+							items: 2
+						},
+						0: {
+							items: 2
 						}
 					}}
-
-=======
-					responsive = {{
-						1200:{
-							items:5
-						},
-						992:{
-							items:4
-						},
-						767:{
-							items:3
-						},
-						576:{
-							items:2
-						},
-						0:{
-							items:2
-						}
-					}}
->>>>>>> master
 					key={this.props.listCourse.length}
 				>
 					{this.renderPopularCourse()}

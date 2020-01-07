@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions/index';
 import { UncontrolledPopover, PopoverBody } from 'reactstrap';
 import $ from 'jquery';
+import { withRouter } from 'react-router-dom';
 class ItemCourse extends Component {
 	goTop = () => {
 		window.scroll({
@@ -54,9 +55,7 @@ class ItemCourse extends Component {
 					<div className="course-info">
 						<div className="course-infomation">
 							<p className="text-sm">Ngày khởi tạo: {course.ngayTao}
-								<i className="fa fa-times" aria-hidden="true" onClick={() => {
 
-								}}></i>
 							</p>
 							<h3 className="course-name">{course.tenKhoaHoc}</h3>
 							<p className="text-sm">{course.danhMucKhoaHoc.tenDanhMucKhoaHoc}</p>
@@ -85,7 +84,14 @@ class ItemCourse extends Component {
 		return (
 			<div id={'Popover-' + this.props.id} className="ItemCourses">
 				<div className="allCourse-item ">
-					<div className="image">
+					<div className="image" onClick={
+						() => {
+
+							if (window.innerWidth < 768) {
+								this.props.history.push(`/home/detail-course/${course.maKhoaHoc}?${course.fee}`)
+							}
+						}
+					}>
 						<div className="wrap-img">
 							<div className="wrap-image-IC" style={{ backgroundImage: `url(${course.hinhAnh})` }}></div>
 						</div>
@@ -147,4 +153,4 @@ const mapDispatchToProps = dispatch => {
 		},
 	};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(ItemCourse);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ItemCourse));
