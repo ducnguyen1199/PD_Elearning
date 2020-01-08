@@ -1,0 +1,238 @@
+.allCourse{
+    @include mediaQuery('md'){
+        .wrap-head{
+            .header-head{
+                height: 250px;
+            }
+        .title.detail-course{
+            padding-left: 40px;
+            span{
+                font-size: 22px;
+            }
+            h4{
+                margin: 5px 0px;
+                font-size: 12px;
+                a{
+                    font-size: 12px;  
+                }
+                span{
+                    font-size: 12px;  
+                }
+            }
+            }
+        }
+        
+        .wrap-top-content{
+            padding: 20px 10px 0px;
+            .sort{
+                .sort-tool{
+                    button{
+                        font-size: 12px !important;
+                    }
+                    
+                }
+                .dropdown-menu.show{
+                    min-width: 0px;
+                    
+                    a{
+                        font-size: 12px;
+                    }
+                }
+               
+            }
+            .search-bar{
+                width: 350px;
+                border-radius: 0px !important;
+                input{
+                    padding: .375rem .75rem;
+                    line-height: 1.5;
+                    font-size: 12px;
+                    
+                }
+            }
+        }
+        .item-course{
+            padding: 0px 7px;
+        }
+        .left-side{
+            @include text_overflow(1);
+            img{
+                width: 40px !important;
+                height: 40px !important;
+            }
+            .teacher-name{
+                font-size: 10px !important;
+            }
+        }
+        .right-side{
+            .more-info-item{
+                i{
+                    font-size: 10px;
+                }
+                span{
+                    font-size: 12px !important;
+                }
+                p{
+                    font-size: 14px !important;
+                }
+                label{
+                    font-size: 12px !important;
+                }
+            }
+            
+        }    
+        .course-category{
+            h4{
+                font-size: 18px;
+            }
+            .category-items{
+                font-size: 14px;
+                padding: 5px 10px !important;
+            }
+        }
+        .Related-Course{
+            .list-course-popular{
+                h1{
+                    font-size: 22px;
+                }
+            }
+        }
+        
+    }
+    @include mediaQuery('sm'){
+        .wrap-top-content{
+            padding: 20px 10px 0px;
+            .sort{
+                .sort-tool{
+                    button{
+                        font-size: 12px !important;
+                    }
+                    
+                }
+                .dropdown-menu.show{
+                    min-width: 0px;
+                    
+                    a{
+                        font-size: 12px;
+                    }
+                }
+               
+            }
+            .search-bar{
+                width: 200px ;
+                border-radius: 0px !important;
+                input{
+                    padding: .375rem .75rem;
+                    line-height: 1.5;
+                    font-size: 12px;
+                    
+                }
+            }
+    }
+}
+        @include mediaQuery('xs'){
+        .wrap-head{
+            .header-head{
+                height: 200px;
+            }
+        .title.detail-course{
+            padding-left: 30px;
+            span{
+                font-size: 16px;
+            }
+            h4{
+                margin: 5px 0px;
+                font-size: 10px;
+                a{
+                    font-size: 10px;  
+                }
+                span{
+                    font-size: 10px;  
+                }
+            }
+            }
+        }
+        
+        .wrap-top-content{
+            padding: 20px 10px 0px;
+            .sort{
+                .sort-tool{
+                    button{
+                        font-size: 10px !important;
+                    }
+                    
+                }
+                .dropdown-menu.show{
+                    min-width: 0px;
+                    
+                    a{
+                        font-size: 10px;
+                    }
+                }
+               
+            }
+            .search-bar{
+                width: 160px !important;
+                border-radius: 0px !important;
+                input{
+                    padding: .375rem .75rem;
+                    line-height: 1.5;
+                    font-size: 10px;
+                    
+                }
+            }
+        }
+        .item-course{
+            padding: 0px 7px;
+        }
+        .left-side{
+            @include text_overflow(1);
+            img{
+                width: 40px !important;
+                height: 40px !important;
+            }
+            .teacher-name{
+                font-size: 10px !important;
+            }
+        }
+        .right-side{
+            .more-info-item{
+                i{
+                    font-size: 8px;
+                }
+                span{
+                    font-size: 10px !important;
+                }
+                p{
+                    font-size: 12px !important;
+                }
+                label{
+                    font-size: 10px !important;
+                }
+            }
+            
+        }    
+        .course-category{
+            h4{
+                font-size: 16px;
+            }
+            .category-items{
+                font-size: 12px;
+                padding: 5px 10px !important;
+            }
+        }
+        .Related-Course{
+            .list-course-popular{
+                h1{
+                    font-size: 18px;
+                }
+            }
+        }
+        
+    }
+
+ 
+
+   
+
+}

@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions/index';
 import { UncontrolledPopover, PopoverBody } from 'reactstrap';
+import $ from 'jquery';
+import { withRouter } from 'react-router-dom';
 class ItemCourse extends Component {
 	goTop = () => {
 		window.scroll({
@@ -16,19 +18,19 @@ class ItemCourse extends Component {
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === this.props.course.maKhoaHoc;
 		}) === -1 ? (
-			<button
-				className="btn--blue btnn"
-				onClick={() => {
-					this.props.addToCart(this.props);
-				}}
-			>
-				THÊM GIỎ HÀNG
+				<button
+					className="btn--blue btnn"
+					onClick={() => {
+						this.props.addToCart(this.props);
+					}}
+				>
+					THÊM GIỎ HÀNG
 			</button>
-		) : (
-			<NavLink className="btn--purple btnn" to="/home/detail-cart">
-				TỚI GIỎ HÀNG
+			) : (
+				<NavLink className="btn--purple btnn" to="/home/detail-cart">
+					TỚI GIỎ HÀNG
 			</NavLink>
-		);
+			);
 	};
 	handleAddToCart = () => {
 		return this.props.courseOfUser ? (
@@ -40,10 +42,10 @@ class ItemCourse extends Component {
 				<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
 					TỚI HỒ SƠ
 				</NavLink>
-			)
+				)
 		) : (
-			this.renderAddToCart()
-		);
+				this.renderAddToCart()
+			);
 	};
 	renderPopover = () => {
 		let { course } = this.props;
@@ -52,7 +54,9 @@ class ItemCourse extends Component {
 				<PopoverBody>
 					<div className="course-info">
 						<div className="course-infomation">
-							<p className="text-sm">Ngày khởi tạo: {course.ngayTao}</p>
+							<p className="text-sm">Ngày khởi tạo: {course.ngayTao}
+
+							</p>
 							<h3 className="course-name">{course.tenKhoaHoc}</h3>
 							<p className="text-sm">{course.danhMucKhoaHoc.tenDanhMucKhoaHoc}</p>
 							<span className="more-infomation">
@@ -80,7 +84,14 @@ class ItemCourse extends Component {
 		return (
 			<div id={'Popover-' + this.props.id} className="ItemCourses">
 				<div className="allCourse-item ">
-					<div className="image">
+					<div className="image" onClick={
+						() => {
+
+							if (window.innerWidth < 768) {
+								this.props.history.push(`/home/detail-course/${course.maKhoaHoc}?${course.fee}`)
+							}
+						}
+					}>
 						<div className="wrap-img">
 							<div className="wrap-image-IC" style={{ backgroundImage: `url(${course.hinhAnh})` }}></div>
 						</div>
@@ -142,4 +153,4 @@ const mapDispatchToProps = dispatch => {
 		},
 	};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(ItemCourse);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ItemCourse));

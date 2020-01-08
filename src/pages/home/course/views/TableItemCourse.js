@@ -37,10 +37,10 @@ export default class TableItemCourse extends Component {
 					})}
 					id={'menu' + index}
 				>
-					<div className="row" style={{ height: '600px' }}>
+					<div className="row" >
 						{listCourse.slice(index * 8, index * 8 + 8).map((item, i) => {
 							return (
-								<div className="col-3 " key={i}>
+								<div className="col-md-4 col-sm-6 col-xl-3 col-12 item-course" key={i}>
 									<ItemCourse
 										course={item}
 										id={index * 10 + i}

@@ -31,7 +31,7 @@ export default class About extends Component {
                     <div className="wrap-about-page">
                         <div className="About-welcome">
                             <div className="About-welcome-head" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500">
-                                <h3>WELCOME</h3>
+                                <h2>WELCOME</h2>
                                 <div className="bottom-line"></div>
                                 <p>
                                     Chúng tôi là PD-team-một phần của OOT-IT-TEAM bao gồm 2 Front-end developer là Phong và Đức.
@@ -45,17 +45,24 @@ export default class About extends Component {
                         </div>
                         <div className="About-process">
                             <div className="row">
-                                <div className="col-8 our-process" data-aos="fade-down-right" data-aos-duration="1000" >
-                                    <p>
-                                        Chào các bạn , chúng tôi là sinh viên của trường Đại Học Công Nghệ Thông tin (UIT) đồng thời cũng là học viên của Cybersoft Academy. Qua nhiều lần ăn hành ngập mồm vì n bug trong khi hoàn thành dự án và nhiều lần giao tiếp với nhau bằng tần số 39hz, cuối cùng thì chúng tôi cũng sứt đầu mẽ tráng hoàn thành hai đồ án xây dựng Website PD-Elearning(ReactJS) và PD-Cinema(Angular). Các bạn có thể xem Video Demo của chúng tôi ở bên góc phải màn hình.
+                                <div className="col-12 col-md-8 our-process" data-aos="fade-down-right" data-aos-duration="1000"
+                                >
+                                    <div className="our-process-wrap">
+                                        <h3>
+                                            Vài lời về chúng tôi
+                                    </h3>
+                                        <p>
+                                            Chào các bạn , chúng tôi là sinh viên của trường Đại Học Công Nghệ Thông tin (UIT) đồng thời cũng là học viên của Cybersoft Academy. Qua nhiều lần ăn hành ngập mồm vì n bug trong khi hoàn thành dự án và nhiều lần giao tiếp với nhau bằng tần số 39hz, cuối cùng thì chúng tôi cũng sứt đầu mẽ tráng hoàn thành hai đồ án xây dựng Website PD-Elearning(ReactJS) và PD-Cinema(Angular). Các bạn có thể xem Video Demo của chúng tôi ở bên góc phải màn hình.
                                 </p>
+                                    </div>
+
                                 </div>
-                                <div className="col-4 our-process-video" data-aos="fade-up-left" data-aos-duration="1000" >
+                                <div className="col-12 col-md-4 our-process-video" data-aos="fade-up-left" data-aos-duration="1000">
                                     <div className="video" data-aos="fade-down-left" data-aos-duration="1000">
                                         <iframe src="https://www.youtube.com/embed/bxtMvIDLu2Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div className="video" >
-                                        <iframe src="https://www.youtube.com/embed/pkDjBE4JgWE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/Nr6FdfxrC_w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
 
@@ -68,8 +75,8 @@ export default class About extends Component {
                                     Team chúng tôi gồm 5 người
                             </p>
                             </div>
-                            <div className="team-mate-img" data-aos="zoom-in-up" data-aos-duration="1000">
-                                <div className="wrap-item">
+                            <div className="row team-mate-img" data-aos="zoom-in-up" data-aos-duration="1000">
+                                <div className="col-4 col-sm  wrap-item">
                                     <div className="item-team-mate">
                                         <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.15752-9/79306432_1188478138025920_2920978816736165888_n.jpg?_nc_cat=107&_nc_ohc=gyqCp3j8FOkAQmRke2iGVaIBmoF09ypJbfJeSCpYpn8h0zFoa1KxBli7Q&_nc_ht=scontent.fsgn2-1.fna&oh=7bcc893b57259deb4aa06a16bb1184e7&oe=5E7F1A4A" />
                                         <div className="overlay-item-info">
@@ -78,7 +85,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
 
-                                <div className="wrap-item">
+                                <div className="col-4 col-sm wrap-item">
                                     <div className="item-team-mate">
                                         <img src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.15752-9/69742186_386209878749620_8591653845933752320_n.jpg?_nc_cat=110&_nc_ohc=WkNjYYfJ63EAQlYycZ60OpSH0mz44yYf1-ed-DcjFVOycU9UQjEUWa_ng&_nc_ht=scontent.fsgn2-3.fna&oh=e4d3c03276da6a3cc6dea0b4f6efe4a7&oe=5E7FF852" />
                                         <div className="overlay-item-info">
@@ -86,7 +93,7 @@ export default class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrap-item">
+                                <div className="col-4 col-sm wrap-item">
                                     <div className="item-team-mate">
                                         <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.15752-9/78628049_471140443604793_3099336439033233408_n.jpg?_nc_cat=109&_nc_ohc=Z-l25-H9llgAQnAWvLsY_hWh3f7BR8QoA1CxiVLdZoaa997JAzxtNGrJw&_nc_ht=scontent.fsgn2-4.fna&oh=b2fffd1ef73330bb87cfc387bbf8e72d&oe=5E877740" />
                                         <div className="overlay-item-info">
@@ -94,7 +101,7 @@ export default class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrap-item">
+                                <div className="col-6 col-sm wrap-item">
                                     <div className="item-team-mate">
                                         <img src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.0-9/31489669_2237296989839639_7265099896020008960_n.jpg?_nc_cat=108&_nc_ohc=e7K5UQXhTN8AQkR9R7F7yY-B5KNnf5l7SrVDe8-oWV2WhsOXaa0gkHIZA&_nc_ht=scontent.fsgn2-3.fna&oh=982921bd84d9b033af6e90c79c287819&oe=5E83F42F" />
                                         <div className="overlay-item-info">
@@ -102,7 +109,7 @@ export default class About extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrap-item">
+                                <div className="col-6 col-sm wrap-item">
                                     <div className="item-team-mate">
                                         <img src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.15752-9/79687985_2548826808519004_8944189833945808896_n.jpg?_nc_cat=103&_nc_ohc=EYGMI6ouC1YAQn7qQIjS9f9oE5Vyfu4daQcTWeZD2OlTQeQX54WA1X22A&_nc_ht=scontent.fsgn2-2.fna&oh=d430029f0cf9178fca90a04a7efc3c43&oe=5E798D58" />
                                         <div className="overlay-item-info">
@@ -120,12 +127,15 @@ export default class About extends Component {
                             </p>
                             </div>
                             <div className="row contact-item">
-                                <div className="col-4 avatar" data-aos="zoom-in-right" data-aos-duration="1000">
-                                    <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.0-9/s960x960/52327095_1233788783446926_2006375065880363008_o.jpg?_nc_cat=101&_nc_ohc=8SPcecWl-8kAQmec33cZ00Mbtl4PA9GX-KpZEN0YiKuMl5-lUJhA8QRBw&_nc_ht=scontent.fsgn2-4.fna&oh=7403a06f8d354c1e88231eba7bebc3fa&oe=5E808149" />
+                                <div className="col-12 col-sm-4 " data-aos="zoom-in-right" data-aos-duration="1000">
+                                    <div className="avatar">
+                                        <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.0-9/s960x960/52327095_1233788783446926_2006375065880363008_o.jpg?_nc_cat=101&_nc_ohc=8SPcecWl-8kAQmec33cZ00Mbtl4PA9GX-KpZEN0YiKuMl5-lUJhA8QRBw&_nc_ht=scontent.fsgn2-4.fna&oh=7403a06f8d354c1e88231eba7bebc3fa&oe=5E808149" />
+                                    </div>
+
                                 </div>
-                                <div className="col-8">
+                                <div className="col-12 col-sm-8">
                                     <div className="infomation" data-aos="zoom-in-left" data-aos-duration="1000">
-                                        <div>
+                                        <div className="infomation-content">
                                             <h3 className="title">
                                                 Nguyễn Công Đức
                                 </h3>
@@ -145,9 +155,9 @@ export default class About extends Component {
                                 </div>
                             </div>
                             <div className="row contact-item">
-                                <div className="col-8 ">
+                                <div className="col-12 col-sm-8 ">
                                     <div className="infomation" data-aos="zoom-in-right" data-aos-duration="1000">
-                                        <div>
+                                        <div className="infomation-content">
                                             <h3 className="title">
                                                 Trần Thanh Phong
                                 </h3>
@@ -164,8 +174,11 @@ export default class About extends Component {
 
                                     </div>
                                 </div>
-                                <div className="col-4 avatar" data-aos="zoom-in-left" data-aos-duration="1000">
-                                    <img src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/76760078_2120431401393796_1251391760240738304_n.jpg?_nc_cat=100&_nc_ohc=KzxLHKYehykAQlDdU7ONcLnKcc3eTnTwLDKQr5oC71wzgnVCaYfgx7rxg&_nc_ht=scontent.fsgn2-2.fna&oh=ebebe676754d7054f116427e00efd876&oe=5E8B4C54" />
+                                <div className="col-12 col-sm-4 " data-aos="zoom-in-left" data-aos-duration="1000">
+                                    <div className="avatar">
+                                        <img src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/76760078_2120431401393796_1251391760240738304_n.jpg?_nc_cat=100&_nc_ohc=KzxLHKYehykAQlDdU7ONcLnKcc3eTnTwLDKQr5oC71wzgnVCaYfgx7rxg&_nc_ht=scontent.fsgn2-2.fna&oh=ebebe676754d7054f116427e00efd876&oe=5E8B4C54" />
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

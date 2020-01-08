@@ -168,7 +168,7 @@ class AllCourse extends Component {
 								<div className="input-group sort-tool">
 									<div className="dropdown">
 										<button
-											className="btn btn-effect dropdown-toggle"
+											className="btn btn-effect dropdown-toggle "
 											type="button"
 											id="dropdownMenuButton"
 											data-toggle="dropdown"
@@ -206,7 +206,7 @@ class AllCourse extends Component {
 									</div>
 								</div>
 							</div>
-							<div className="input-group mb-3 search-bar">
+							<div className="input-group  search-bar">
 								<input
 									type="text"
 									className="form-control"
@@ -224,13 +224,13 @@ class AllCourse extends Component {
 					<hr></hr>
 					<div className="allCourse-body">
 						<div className="row">
-							<div className="col-10" data-aos="zoom-out-right" data-aos-duration="1000" data-aos-delay="1100">
+							<div className="col-sm-10 col-9" data-aos="zoom-out-right" data-aos-duration="1000" data-aos-delay="1100">
 								<TableItemCourse
 									listCourse={tempCourseArray}
 									courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''}
 								/>
 							</div>
-							<div className="col-2" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1100">
+							<div className="col-3 col-sm-2" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1100">
 								<div className="course-category">
 									<h4 className="title ">Danh mục khóa học</h4>
 
@@ -244,9 +244,11 @@ class AllCourse extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="Related-Course"></div>
+
 					</div>
-					<CoursePopular />
+					<div className="Related-Course">
+						<CoursePopular />
+					</div>
 				</section>
 			</Fragment>
 		);

@@ -1,0 +1,117 @@
+.About-page{
+    @include mediaQuery('xl'){
+        h2{
+            font-size: 38px !important;
+        }
+        h3{
+            font-size: 32px !important;
+        }
+        p{
+            font-size: 16px !important;
+        }
+        
+         .Our-team-mate{
+            padding: 20px 35px;
+            .team-mate-tittle {
+                padding: 20px 0px;
+            }   
+            .team-mate-img .wrap-item{
+                height: 350px;
+            }
+         }
+        .wrap-about-page .About-process .our-process-video iframe{
+            height: 100%;
+        }
+    }
+    @include mediaQuery('md'){
+        h2{
+            font-size: 32px !important;
+        }
+        h3{
+            font-size: 28px !important;
+        }
+        p{
+            font-size: 14px !important;
+        }
+        .wrap-about-page{
+            margin: 0 30px;
+        }
+        .wrap-about-page .About-welcome{
+            padding: 20px;
+        }
+        .wrap-about-page .About-welcome .About-welcome-head{
+            padding: 20px;
+        }
+        .wrap-about-page .About-welcome .About-welcome-head .bottom-line{
+            margin: 7px 0px;
+        }
+        .wrap-about-page .About-process .our-process p{
+            padding: 0 20px;
+        }
+         .Our-team-mate{
+            padding: 10px 20px;
+            .team-mate-tittle {
+                padding: 15px 0px;
+            }   
+            .team-mate-img .wrap-item{
+                height: 270px;
+            }
+         }
+        .wrap-about-page .About-process .our-process-video iframe{
+            // height: 100%;
+        }
+        .Our-team-mate .team-mate-img .wrap-item .overlay-item-info{
+            font-size: 18px;
+        }
+    }
+    @include mediaQuery('sm'){
+        h2{
+            font-size: 28px !important;
+        }
+        h3{
+            font-size: 24px !important;
+        }
+        p{
+            font-size: 12px !important;
+        }
+        .wrap-about-page{
+            margin: 0 30px;
+        }
+        .wrap-about-page .About-welcome{
+            padding: 20px;
+        }
+        .wrap-about-page .About-welcome .About-welcome-head{
+            padding: 20px;
+        }
+        .wrap-about-page .About-welcome .About-welcome-head .bottom-line{
+            margin: 7px 0px;
+        }
+        .wrap-about-page .About-process .our-process-wrap{
+            padding: 10px 0px;
+        }
+        .wrap-about-page .About-process .our-process p{
+            padding: 0 20px;
+        }
+         .Our-team-mate{
+            padding: 10px 10px;
+            .team-mate-tittle {
+                padding: 15px 0px;
+            }   
+            .team-mate-img .wrap-item{
+                height: 150px;
+            }
+         }
+        .wrap-about-page .About-process .our-process-video iframe{
+            width:100%;
+        }
+        .Our-team-mate .team-mate-img{
+            padding: 5px 10px;
+        }
+        .Our-team-mate .team-mate-img .wrap-item .overlay-item-info{
+            font-size: 12px;
+        }
+        .loaction-to-code .location-title{
+            padding: 10px 0px;
+        }
+    }
+}
