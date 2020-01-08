@@ -10,7 +10,7 @@
         }
     }
     .list-course{
-        padding: 30px;
+        padding: 30px 200px;
         .item-course {
             padding: 2px;
         }
@@ -85,6 +85,12 @@
             margin-top: 30px;
         }
     }
+    .list-course{
+        padding: 30px 100px;
+        .item-course {
+            padding: 2px;
+        }
+    }
     .item-category{
         height: 100px;
         width: 100px;
@@ -157,6 +163,7 @@
         font-size: 12px!important;
     }
     .list-course {
+        padding: 30px;
         .lc-main-content {
             .lc-btn-group {
                 text-align: center;

@@ -56,7 +56,7 @@ class DetailCourse extends Component {
 			}) === -1 ? (
 				this.renderAddToCart()
 			) : (
-				<NavLink className="btn--white btnn" to="/home/profile">
+				<NavLink className="btn--purple btnn" to="/home/profile">
 					TỚI HỒ SƠ
 				</NavLink>
 			)
@@ -94,7 +94,7 @@ class DetailCourse extends Component {
 											<span className="price-course">{this.state.fee}$</span>
 										</div>
 										<div className="info-content">
-											<div className="row m-0">
+											<div className="row m-0 align-items-center">
 												<div className="col-3">
 													<div className="item-content teacher-content">
 														<img

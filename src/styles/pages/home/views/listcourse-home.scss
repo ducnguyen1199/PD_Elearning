@@ -1,5 +1,5 @@
 .list-course {
-	padding: 40px 100px;
+	padding: 40px 70px;
 	width: 100%;
 	.item-course {
 		display: none;
@@ -15,14 +15,14 @@
 		.lc-btn-group {
 			text-align: center;
 			.btnn {
-				font-size: $fs-md + 3;
+				font-size: $fs-md - 3;
 				margin: 0 5px;
 				font-family: $font-title;
 				font-weight: $fw-bold-1;
 				display: inline-flex;
 				i {
 					font-weight: normal;
-					font-size: $fs-md-lg;
+					font-size: $fs-md;
 					margin-left: 5px;
 				}
 			}

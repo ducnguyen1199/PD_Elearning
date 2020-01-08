@@ -66,6 +66,7 @@
 				.course-name {
 					font-weight: 700;
 					@include text_overflow(1);
+					font-size: 20px;
 				}
 				.more-infomation {
 					display: flex;
@@ -77,21 +78,22 @@
 					}
 					i {
 						font-size: 12px;
-						color: $color-se-3;
+						color: $color-pr-3;
 					}
 					.dollar {
 						font-size: 12px;
-						color: $color-se-3;
+						color: $color-pr-3;
 						label {
 							color: #000;
-							font-size: 12px;
-
 							margin-bottom: 0px;
+						}
+						p{
+							color: $color-pr-1;
 						}
 					}
 					p {
 						text-align: center;
-						font-size: 18px;
+						font-size: 20px;
 					}
 				}
 			}
@@ -123,7 +125,7 @@
 			@include text_overflow(2);
 		}
 		.text-sm {
-			@include text(rgba(0, 0, 0, 0.7), $fs-sm, $fw-thin);
+			@include text(rgba(0, 0, 0, 0.7), $fs-sm, normal);
 		}
 		.course-description {
 			height: 80px;
@@ -145,14 +147,14 @@
 				content: '';
 			}
 			&::before {
-				background: linear-gradient(to left, $color-se-2, transparent);
+				background: linear-gradient(to left, $color-pr-2, transparent);
 			}
 			&::after {
 				margin-left: 5px;
-				background: linear-gradient(to right, $color-se-2, transparent);
+				background: linear-gradient(to right, $color-pr-2, transparent);
 			}
 			i {
-				color: $color-se-1;
+				color: $color-pr-3;
 			}
 		}
 		.detail-course {

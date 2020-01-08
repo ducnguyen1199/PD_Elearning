@@ -31,8 +31,8 @@ class KhoaHoc extends Component {
 			}) === -1 ? (
 				this.renderAddToCart()
 			) : (
-				<NavLink className="btn--black btnn" to="/home/profile">
-					TỚI HỒ SƠ CÁ NHÂN
+				<NavLink className="btn--purple btnn" to="/home/profile">
+					TỚI HỒ SƠ
 				</NavLink>
 			)
 		) : (
@@ -95,13 +95,13 @@ class KhoaHoc extends Component {
 							</span>
 							<p className="description">{course.moTa}</p>
 							<div className="btn-group">
+								{this.handleAddToCart()}
 								<NavLink
 									className="btn--white btnn"
 									to={`/home/detail-course/${course.maKhoaHoc}?${course.fee}`}
 								>
 									CHI TIẾT
 								</NavLink>
-								{this.handleAddToCart()}
 								<div className="like">
 									<div
 										className="HeartAnimation"

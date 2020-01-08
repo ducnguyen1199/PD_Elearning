@@ -37,10 +37,10 @@ class ItemCourse extends Component {
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === this.props.course.maKhoaHoc;
 			}) === -1 ? (
-					this.renderAddToCart()
-				) : (
-					<NavLink className="btn--white btnn" to="/home/profile" onClick={this.goTop}>
-						TỚI HỒ SƠ
+				this.renderAddToCart()
+			) : (
+				<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
+					TỚI HỒ SƠ
 				</NavLink>
 				)
 		) : (

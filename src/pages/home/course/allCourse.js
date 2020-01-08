@@ -218,11 +218,6 @@ class AllCourse extends Component {
 										this.handleOnChange(event);
 									}}
 								/>
-								<div className="input-group-append">
-									<span className="input-group-text" id="basic-addon2">
-										<i className="fa fa-search" aria-hidden="true"></i>
-									</span>
-								</div>
 							</div>
 						</div>
 					</div>

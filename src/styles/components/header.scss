@@ -46,7 +46,7 @@
 		box-shadow: 0 0 5px 0 #0000005e;
 		flex-wrap: nowrap;
 		.navbar-brand {
-			width: 250px;
+			// width: 250px;
 			display: flex;
 			img {
 				width: 50px;
@@ -169,7 +169,7 @@
 				.total {
 					text-align: center;
 					font-family: $font-title;
-					@include text($color-pr-1, $fs-md-lg, $fw-bold-1);
+					@include text($color-pr-1, $fs-md-lg + 5, $fw-bold-1);
 					margin-bottom: 25px;
 					position: relative;
 					&::after {
@@ -215,11 +215,13 @@
 						}
 					}
 					.bttn {
-						width: 80%;
+						width: 90%;
 						margin: 0 auto;
 						text-align: center;
 						padding: 10px 0;
-						font-size: $fs-md;
+						font-size: $fs-md + 5;
+						font-family: $font-title;
+						background: linear-gradient(to right, #8dd6f9,#00aeff,#8dd6f9);
 					}
 				}
 				&:hover {
@@ -280,7 +282,7 @@
 						@include text(black, $fs-sm, $fw-thin);
 					}
 					.fee {
-						@include text($color-pr-1, $fs-md-lg, $fw-bold-1);
+						@include text($color-se-1, $fs-md-lg, $fw-bold-1);
 					}
 				}
 				i {

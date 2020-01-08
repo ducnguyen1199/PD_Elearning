@@ -121,7 +121,7 @@
 					.content {
 						margin-left: 5px;
 						label {
-							@include text(#5f5f5f, $fs-sm, $fw-thin);
+							@include text(#5f5f5f, $fs-sm, normal);
 							line-height: 18px;
 							display: block;
 							margin-bottom: 0;
@@ -133,7 +133,7 @@
 						}
 					}
 					&.fee {
-						@include text($color-se-1, $fs-md-lg, $fw-bold-1);
+						@include text($color-pr-1, $fs-lg - 5, $fw-bold-1);
 					}
 				}
 			}
@@ -177,7 +177,7 @@
 						}
 					}
 					&.fee {
-						@include text($color-pr-1, $fs-md-lg, $fw-bold-1);
+						@include text($color-pr-4, $fs-lg - 5, $fw-bold-1);
 					}
 				}
 				.text-sm {
@@ -217,14 +217,13 @@
 				}
 				.btn-group {
 					@include absolute_bottom(10px, 0, 100%, auto);
-					padding: 10px;
+					padding: 0 10px;
 					display: flex;
 					justify-content: space-between;
 					.btnn {
-						padding-left: 10px;
-						padding-right: 10px;
+						padding: 7px 15px;
 						font-size: $fs-md;
-						font-family: $font-title;
+						font-family: $font-text;
 						font-weight: $fw-bold-1;
 					}
 					i {
@@ -265,8 +264,8 @@
 	}
 }
 .like {
-	width: 35px;
-	height: 35px;
+	width: 40px;
+	height: 40px;
 }
 
 .HeartAnimation {
@@ -276,8 +275,8 @@
 	background-size: 2900%;
 	background-position: left;
 	transform: translateX(-35px);
-	width: 100px;
-	height: 100px;
+	width: 110px;
+    height: 110px;
 	margin-top: -35px;
 	cursor: pointer;
 	display: inline-block;

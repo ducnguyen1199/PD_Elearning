@@ -45,8 +45,9 @@
 	}
 	.btn--blue {
 		width: 100%;
-		font-size: $fs-md-lg - 5;
+		font-size: $fs-md-lg;
 		margin-top: 20px;
 		font-family: $font-title;
+		background: linear-gradient(to right, #63c9f8,#00aeff,#63c9f8);
 	}
 }
