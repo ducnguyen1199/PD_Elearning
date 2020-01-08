@@ -8,7 +8,7 @@ class CourseAccepted extends Component {
     }
     renderHTML = () => {
         let { listCourseAccepted } = this.props
-        if (listCourseAccepted) {
+        if (listCourseAccepted && listCourseAccepted.length) {
             return this.props.listCourse.filter(item => {
                 let index = listCourseAccepted.findIndex(item2 => {
                     return item.maKhoaHoc === item2.maKhoaHoc
@@ -18,6 +18,10 @@ class CourseAccepted extends Component {
                 return <ItemCourseOfUser course={item} key={index} location={"courseAccepted"} />
             })
         }
+        else {
+            return <div className="message">Chưa có khóa học nào ^.^</div>
+        }
+
     }
     render() {
         return (

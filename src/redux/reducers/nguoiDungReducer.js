@@ -4,6 +4,7 @@ let initialState = {
 	userList: [],
 	listCourseWaiting: [],
 	listCourseAccepted: [],
+	isPUT: false,
 };
 
 const NguoiDungReducer = (state = initialState, action) => {
@@ -39,6 +40,10 @@ const NguoiDungReducer = (state = initialState, action) => {
 			});
 			userList3[x2] = action.data;
 			state.userList = userList3;
+			let test = { ...state.accountInfo }
+			test.hoTen = action.data.hoTen;
+			state.accountInfo = test;
+
 			return { ...state };
 		case actionTypes.GET_INFO_ACCOUNT:
 			state.accountInfo = action.data;
@@ -60,6 +65,14 @@ const NguoiDungReducer = (state = initialState, action) => {
 			listCourseWaiting.splice(indexx, 1);
 			state.listCourseWaiting = listCourseWaiting;
 			return { ...state };
+		case actionTypes.CANCEL_ACCEPTED_COURSE_ADMIN:
+			let listCourseAccepted2 = [...state.listCourseAccepted];
+			let indexxxx = state.listCourseAccepted.findIndex(item => {
+				return item.maKhoaHoc === action.data.maKhoaHoc
+			});
+			listCourseAccepted2.splice(indexxxx, 1);
+			state.listCourseAccepted = listCourseAccepted2;
+			return { ...state };
 		case actionTypes.ACCPET_COURSE_REGISTER:
 			let listCourseWaiting1 = [...state.listCourseWaiting];
 			let indexxx = state.listCourseWaiting.findIndex(item => {
@@ -67,7 +80,6 @@ const NguoiDungReducer = (state = initialState, action) => {
 			});
 			listCourseWaiting1.splice(indexxx, 1);
 			state.listCourseWaiting = listCourseWaiting1;
-
 			let listCourseAccepted = [...state.listCourseAccepted];
 			let temp = {
 				maKhoaHoc: action.data.maKhoaHoc,

@@ -214,7 +214,6 @@ export const actGetInfoAccountAdmin = data => {
 
 export const actPUTinfoAccount = data => {
 	let user = '';
-
 	if (window.location.pathname === '/home/profile') {
 		user = JSON.parse(localStorage.getItem('user'));
 	} else {
@@ -225,15 +224,21 @@ export const actPUTinfoAccount = data => {
 			Authorization: `Bearer ${user.accessToken}`,
 		})
 			.then(rs => {
+				JSON.stringify(localStorage.setItem("isPutSuccess", true))
 				successApi('CẬP NHẬT THÔNG TIN THÀNH CÔNG.').then(() => {
 					dispatch({
 						type: actionTypes.PUT_ACCOUNT_USER,
 						data: data,
 					});
+					let a = document.getElementsByClassName('form-control');
+					for (let i = 1; i < a.length; i++) {
+						a[i].setAttribute('disabled', true);
+					}
 					$('#modelId').modal('hide');
 				});
 			})
 			.catch(err => {
+				JSON.stringify(localStorage.setItem("isPutSuccess", false))
 				errorApi(err);
 			});
 	};
@@ -331,6 +336,26 @@ export const actCancelAttendCourseAdmin = data => {
 			});
 	};
 };
+export const actCancelAcceptedCourseAdmin = data => {
+	let user =
+		window.location.pathname === '/home/profile'
+			? JSON.parse(localStorage.getItem('user'))
+			: JSON.parse(localStorage.getItem('userAdmin'));
+	return dispatch => {
+		callApi('QuanLyKhoaHoc/HuyGhiDanh', 'POST', data, { Authorization: `Bearer ${user.accessToken}` })
+			.then(rs => {
+				successApi('HỦY GHI DANH THÀNH CÔNG.').then(() => {
+					dispatch({
+						type: actionTypes.CANCEL_ACCEPTED_COURSE_ADMIN,
+						data: data,
+					});
+				});
+			})
+			.catch(err => {
+				errorApi(err);
+			});
+	};
+}
 export const actAcceptCourse = data => {
 	const userAdmin = JSON.parse(localStorage.getItem('userAdmin'));
 	let { maKhoaHoc, taiKhoan } = data;

@@ -65,10 +65,10 @@ const CoursesAreWaiting = props => {
 					{props.listCourseWaiting.length ? (
 						renderTableHTML()
 					) : (
-						<td colSpan="5" className="message">
-							Không có khóa học
+							<td colSpan="5" className="message">
+								Không có khóa học
 						</td>
-					)}
+						)}
 				</tbody>
 			</table>
 		</Fragment>
@@ -88,6 +88,7 @@ const mapDispatchToProps = dispatch => {
 		acceptCourse: data => {
 			dispatch(actions.actAcceptCourse(data));
 		},
+
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesAreWaiting);
