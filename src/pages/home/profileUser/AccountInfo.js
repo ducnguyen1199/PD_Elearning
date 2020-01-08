@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as actions from '../../../redux/actions/index';
 import { connect } from 'react-redux';
+import Swal from 'sweetalert2';
 class AccountInfo extends Component {
 	constructor(props) {
 		super(props);
@@ -34,25 +35,44 @@ class AccountInfo extends Component {
 				form: false,
 			},
 			statusSave: false,
+			statusFromAPI: false,
+
 		};
+	}
+	componentDidUpdate(nextProps) {
+		let { accountInfo } = this.props
+		if (accountInfo !== nextProps.accountInfo) {
+			this.setState({
+				values: {
+					taiKhoan: accountInfo.taiKhoan,
+					matKhau: accountInfo.matKhau,
+					hoTen: accountInfo.hoTen,
+					soDT: accountInfo.soDT,
+					maLoaiNguoiDung: accountInfo.maLoaiNguoiDung,
+					maNhom: accountInfo.maNhom,
+					email: accountInfo.email,
+				}, statusFromAPI: JSON.parse(localStorage.getItem("isPutSuccess"))
+			})
+		}
 	}
 	handleOnEdit = () => {
 		let a = document.getElementsByClassName('form-control');
 		for (let i = 1; i < a.length; i++) {
 			a[i].removeAttribute('disabled');
-			console.log(a[i]);
 		}
-		let accountInfo = this.props.accountInfo;
+
 		this.setState({
 			statusSave: true,
-			values: {
-				taiKhoan: accountInfo.taiKhoan,
-				matKhau: accountInfo.matKhau,
-				hoTen: accountInfo.hoTen,
-				soDT: accountInfo.soDT,
-				maLoaiNguoiDung: accountInfo.maLoaiNguoiDung,
-				maNhom: accountInfo.maNhom,
-				email: accountInfo.email,
+			statusFromAPI: false,
+			valids: {
+				taiKhoan: true,
+				matKhau: true,
+				hoTen: true,
+				soDT: true,
+				maLoaiNguoiDung: true,
+				maNhom: true,
+				email: true,
+				form: true,
 			},
 		});
 	};
@@ -94,8 +114,8 @@ class AccountInfo extends Component {
 					if (
 						!value.match(
 							'^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
-								'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
-								'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+							'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+							'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
 						)
 					) {
 						isValid = false;
@@ -112,7 +132,7 @@ class AccountInfo extends Component {
 					if (
 						!value.match(
 							'^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@' +
-								'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
+							'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'
 						)
 					) {
 						isValid = false;
@@ -131,6 +151,7 @@ class AccountInfo extends Component {
 			},
 			() => {
 				this.formValidation();
+
 			}
 		);
 	};
@@ -144,14 +165,41 @@ class AccountInfo extends Component {
 		});
 	};
 	handleOnSave = () => {
-		this.props.UpdateUserProfile(this.state.values);
+		this.state.valids.form === true ?
+			this.props.UpdateUserProfile(this.state.values)
+			: Swal.fire({
+				position: 'center',
+				icon: 'error',
+				html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG KIỂM TRA LẠI THÔNG TIN</b>`,
+				showConfirmButton: false,
+				timer: 1500,
+			})
+				.then(() => {
+					this.setState({
+						statusSave: true,
+					})
+				});;
+
+	};
+	handleOnCancel = () => {
+		let accountInfo = this.props.accountInfo;
+		this.setState({
+			statusSave: false,
+			values: {
+				taiKhoan: accountInfo.taiKhoan,
+				matKhau: accountInfo.matKhau,
+				hoTen: accountInfo.hoTen,
+				soDT: accountInfo.soDT,
+				maLoaiNguoiDung: accountInfo.maLoaiNguoiDung,
+				maNhom: accountInfo.maNhom,
+				email: accountInfo.email,
+			}
+		});
 		let a = document.getElementsByClassName('form-control');
 		for (let i = 1; i < a.length; i++) {
 			a[i].setAttribute('disabled', true);
 		}
-		this.setState({
-			statusSave: false,
-		});
+
 	};
 	render() {
 		let { errors } = this.state;
@@ -166,7 +214,7 @@ class AccountInfo extends Component {
 							className="form-control effect-7"
 							placeholder="Tên tài khoản "
 							aria-describedby="helpId"
-							defaultValue={this.props.accountInfo.taiKhoan}
+							value={this.state.values.taiKhoan}
 							onChange={this.handleOnChange}
 							disabled
 						/>
@@ -180,7 +228,7 @@ class AccountInfo extends Component {
 							className="form-control"
 							placeholder="Mật Khẩu "
 							aria-describedby="helpId"
-							defaultValue={this.props.accountInfo.matKhau}
+							value={this.state.values.matKhau}
 							onChange={this.handleOnChange}
 							onBlur={this.handleErrors}
 							onKeyUp={this.handleErrors}
@@ -197,7 +245,7 @@ class AccountInfo extends Component {
 							className="form-control"
 							placeholder="Tên người dùng "
 							aria-describedby="helpId"
-							defaultValue={this.props.accountInfo.hoTen}
+							value={this.state.values.hoTen}
 							onChange={this.handleOnChange}
 							onBlur={this.handleErrors}
 							onKeyUp={this.handleErrors}
@@ -213,7 +261,7 @@ class AccountInfo extends Component {
 							className="form-control"
 							placeholder="Số điện thoại "
 							aria-describedby="helpId"
-							defaultValue={this.props.accountInfo.soDT}
+							value={this.state.values.soDT}
 							onChange={this.handleOnChange}
 							onBlur={this.handleErrors}
 							onKeyUp={this.handleErrors}
@@ -229,7 +277,7 @@ class AccountInfo extends Component {
 							className="form-control"
 							placeholder="Email "
 							aria-describedby="helpId"
-							defaultValue={this.props.accountInfo.email}
+							value={this.state.values.email}
 							onChange={this.handleOnChange}
 							onBlur={this.handleErrors}
 							onKeyUp={this.handleErrors}
@@ -239,16 +287,22 @@ class AccountInfo extends Component {
 					</div>
 				</form>
 				<div className="button">
-					<button className="btn--blue" onClick={this.handleOnEdit}>
-						Sửa thông tin
+
+					{this.state.statusSave === true && this.state.statusFromAPI === false ? (
+						<div>
+							<button className="btn--red mr-1" onClick={this.handleOnCancel}>
+								Hủy thay đổi
 					</button>
-					{this.state.statusSave ? (
-						<button className="btn--purple" onClick={this.handleOnSave}>
-							Lưu thay đổi
+							<button className="btn--purple" onClick={this.handleOnSave}>
+								Lưu thay đổi
 						</button>
+						</div>
+
 					) : (
-						''
-					)}
+							<button className="btn--blue" onClick={this.handleOnEdit}>
+								Sửa thông tin
+					</button>
+						)}
 				</div>
 			</Fragment>
 		);

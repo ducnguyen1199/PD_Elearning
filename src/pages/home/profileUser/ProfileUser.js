@@ -77,8 +77,7 @@ class ProfileUser extends Component {
 												<div className="bottom-line"></div>
 											</div>
 											<div className="Table-Content">
-
-												{accountInfo ? <CourseAttended accountInfo={accountInfo} /> : ''}
+												{accountInfo ? <CourseAttended accountInfo={accountInfo} /> : ""}
 											</div>
 										</div>
 										<div className="tab-pane container fade" id="menu2">

@@ -40,15 +40,15 @@ class CourseAttended extends Component {
 							<p>GIÁ TRỊ</p>
 						</div>
 						<div className="mct-list-cart">
-							{this.props.accountInfo.chiTietKhoaHocGhiDanh ? (
-								this.props.accountInfo.chiTietKhoaHocGhiDanh.length ? (
+							{this.props.listCourseWaiting ? (
+								this.props.listCourseWaiting.length ? (
 									this.renderDetailCourseAttended()
 								) : (
-									<div className="message">Bạn chưa đăng kí khóa học nào</div>
-								)
+										<div className="message">Bạn chưa đăng kí khóa học nào</div>
+									)
 							) : (
-								''
-							)}
+									''
+								)}
 						</div>
 					</div>
 				</div>
