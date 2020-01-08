@@ -21,7 +21,7 @@ class ListCourse extends Component {
 		if (listCourse.length) {
 			return listCourse.slice(0, 6).map((item, index) => {
 				return (
-					<div className="item-course col-12 col-lg-4" key={index}>
+					<div className="item-course col-12 col-xl-4" key={index}>
 						<KhoaHoc
 							course={item}
 							courseOfUser={accountInfo ? accountInfo.chiTietKhoaHocGhiDanh : ''}

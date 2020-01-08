@@ -174,7 +174,7 @@ class Header extends Component {
 						<h1>Elearning</h1>
 					</NavLink>
 					<div className="collapse navbar-collapse" id="collapsibleNavId">
-						<ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+						<ul className="navbar-nav mr-auto mt-2">
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"
@@ -222,7 +222,7 @@ class Header extends Component {
 										<div className="ct-cart">{this.renderCart()}</div>
 										<div className="d-flex justify-content-around">
 											<NavLink
-												className="btn--purple bttn"
+												className="btn--blue bttn"
 												to="/home/detail-cart"
 												onClick={this.goTop}
 											>

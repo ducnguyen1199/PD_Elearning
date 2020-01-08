@@ -37,10 +37,10 @@ class ItemCourse extends Component {
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === this.props.course.maKhoaHoc;
 			}) === -1 ? (
-					this.renderAddToCart()
-				) : (
-					<NavLink className="btn--white btnn" to="/home/profile" onClick={this.goTop}>
-						TỚI HỒ SƠ
+				this.renderAddToCart()
+			) : (
+				<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
+					TỚI HỒ SƠ
 				</NavLink>
 				)
 		) : (
@@ -110,25 +110,22 @@ class ItemCourse extends Component {
 									<div className="more-infomation">
 										<div className="more-info-item">
 											<span>
-												<i className="fa fa-graduation-cap"> </i> <span>Học viên</span>
+												<i className="fa fa-graduation-cap"> </i> <label>Học viên</label>
 												<p>{course.soLuongHocVien}</p>
 											</span>
 										</div>
 										<div className="more-info-item">
 											<span>
-												<i className="fa fa-eye"> </i>
-												<span>Lượt xem</span>
+												<i className="fa fa-eye"></i>{" "}
+												<label>Lượt xem </label>
 												<p>{course.luotXem}</p>
 											</span>
 										</div>
 										<div className="more-info-item">
-											<span>
-												{' '}
 												<span className="dollar">
-													$ <label>Giá</label>
-													<p>{course.fee} </p>
+												<i class="fa fa-money"></i> <label>Giá</label>
+													<p>{course.fee}$</p>
 												</span>
-											</span>
 										</div>
 									</div>
 								</div>
