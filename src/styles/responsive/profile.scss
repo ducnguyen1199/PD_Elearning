@@ -1,0 +1,290 @@
+.profileUser{
+    @include mediaQuery('xl'){
+        .wrap-profileUser{
+            padding: 40px 40px ;
+        }
+        .wrap-profileUser .profile-navigation-bar .border-avatar .user-name{
+              font-size: 16px ;
+      }
+    
+       .wrap-profileUser .profile-navigation-bar .profile-list-menu .nav-item .nav-link{
+        padding: 10px 15px ;
+        font-size: 13px ;
+      }
+      .wrap-profileUser .profile-infomation-table .profile-table-menu{
+        padding: 15px 40px ;
+        min-height: 620px ;
+        .Table-header{
+            padding: 12px;
+        }
+        .bottom-line{
+            margin: 10px 0 12px;
+        }
+        .AccountInfo{
+            
+            label{
+                margin-bottom: .8em;
+                font-size: 13px;
+            }
+            input{
+                margin-bottom: 1.0em;
+                font-size: 14px;
+                height: calc(1.3em + .50rem + 2px);
+            }
+        } 
+      }
+      .button{
+        margin-top: 30px;
+        
+      }
+      .list-cart {
+        .content {
+            .header-list-cart {
+                font-size: 12px;
+                padding: 10px 40px 10px 90px;
+                p{
+                    margin-right: 62px;
+                }
+            }
+            .mct-list-cart{
+                .no-course {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .mct-list-cart {
+        .item-course-of-user{
+            .content-left {
+                img {
+                    width: 100px;
+                    height: 70px;
+                }
+                .mct-item-course-of-user {
+                    margin-left: 15px;
+                    h5 {
+                        font-size: $fs-md +3;
+                        a {
+                            font-size: $fs-md;
+                        }
+                    }
+                }
+            }
+            .content-right {
+                .fee {
+                   font-size:$fs-md-lg;
+                }
+                i {
+                    font-size: $fs-md-lg - 3;
+                }
+            }
+        }
+    }
+
+    }
+
+    @include mediaQuery('md'){
+        .wrap-profileUser{
+            padding: 35px 0px ;
+        }
+        .border-avatar{
+            .user-name{
+                font-size: 16px ;
+            }
+        }
+        .profile-list-menu .nav-item .nav-link{
+          padding: 10px 15px !important;
+          font-size: 13px !important;
+        }
+        .wrap-profileUser .profile-navigation-bar{
+            padding: 10px;
+        }
+        .profile-infomation-table .profile-table-menu{
+          padding: 10px 10px !important;
+          min-height: 620px !important;
+          .Table-header{
+              padding: 12px;
+              h3{
+                  font-size: 1.45em;
+              }
+              p{
+                  font-size: 14px;
+              }
+          }
+          .bottom-line{
+              margin: 10px 0 12px;
+          }
+          .AccountInfo{
+              
+              label{
+                  margin-bottom: .8em;
+                  font-size: 13px;
+              }
+              input{
+                  margin-bottom: 1.0em;
+                  font-size: 14px;
+                  height: calc(1.3em + .50rem + 2px);
+              }
+          } 
+        }
+        .button{
+          margin-top: 30px;
+          button{
+            font-size: 10px;
+            padding: 8px 12px;
+        }
+        }
+        .list-cart {
+          .content {
+              .header-list-cart {
+                  font-size: 12px;
+                  padding: 10px 40px 10px 80px !important;
+              }
+              .mct-list-cart{
+                  .no-course {
+                      font-size: 14px;
+                  }
+              }
+          }
+      }
+      .mct-list-cart {
+          .item-course-of-user{
+              .content-left {
+                  img {
+                    width: 80px !important;
+                    height: 60px !important;
+                  }
+                  .mct-item-course-of-user {
+                      margin-left: 10px;
+                      h5 {
+                          font-size: $fs-md !important;
+                          a {
+                              font-size: $fs-md - 3 !important;
+                          }
+    
+                      }
+                      p{
+                          font-size: $fs-md - 3;
+                      }
+                  }
+              }
+              .content-right {
+                  .fee {
+                     font-size:$fs-md+5!important;
+                  }
+                  i {
+                      font-size: $fs-md-lg - 3;
+                  }
+              }
+          }
+      }
+      }
+      @include mediaQuery('sm'){
+        .wrap-profileUser{
+            padding: 25px 0px ;
+        }
+        .border-avatar{
+            .user-name{
+                font-size: 10px !important;
+            }
+        }
+        .profile-list-menu .nav-item .nav-link{
+          padding: 5px 10px !important;
+          font-size: 8px !important;
+        }
+        .wrap-profileUser .profile-navigation-bar{
+            padding: 10px;
+        }
+        .profile-nav{
+            padding: 5px;
+        }
+        .profile-infomation-table{
+            padding: 5px !important;
+        }
+        .profile-infomation-table .profile-table-menu{
+          padding: 10px 10px !important;
+          min-height: 420px !important;
+          .Table-header{
+              padding: 8px !important;
+              h3{
+                  font-size: 1.05em;
+              }
+              p{
+                  font-size: 10px;
+              }
+          }
+          .bottom-line{
+              margin: 5px 0 8px !important;
+          }
+          .AccountInfo{
+              .form-group{
+                  margin-bottom: 8px;
+              }
+              label{
+                  margin-bottom: .5em !important;
+                  font-size: 8px !important;
+              }
+              input{
+                  margin-bottom: .7em !important;
+                  font-size: 8px !important;
+                  padding: 12px 10px;
+              }
+          } 
+        }
+        .button{
+          margin-top: 10px;
+          button{
+            font-size: 8px;
+            padding: 5px 10px;
+        }
+        }
+        .list-cart {
+          .content {
+              .header-list-cart {
+                  font-size: 10px;
+                  padding: 10px 10px 10px 35px !important;
+              }
+              .mct-list-cart{
+                  .no-course {
+                      font-size: 10px;
+                  }
+              }
+          }
+      }
+      .mct-list-cart {
+          padding: 0px 10px !important;
+          .item-course-of-user{
+              padding: 5px 5px;
+              margin: 10px 0px;
+              .content-left {
+                  img {
+                    width: 60px !important;
+                    height: 40px !important;
+                  }
+                  .mct-item-course-of-user {
+                      margin-left: 5px;
+                      h5 {
+                          font-size: $fs-md - 5 !important;
+                          a {
+                              font-size: $fs-md - 8 !important;
+                          }
+    
+                      }
+                      p{
+                          font-size: $fs-md - 8;
+                      }
+                  }
+              }
+              .content-right {
+                  .fee {
+                     font-size:$fs-md!important;
+                  }
+                  i {
+                      font-size: $fs-md-lg - 5;
+                  }
+              }
+          }
+      }
+      }
+}
+
