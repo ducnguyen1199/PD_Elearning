@@ -23,33 +23,37 @@ class ProfileUser extends Component {
 				<section className="profileUser">
 					<div className="wrap-profileUser">
 						<div className="row m-0 all-table">
-							<div className="col-3 profile-navigation-bar">
-								<div className="border-avatar">
-									<div className="profile-avatar">
-										<img src="http://bootdey.com/img/Content/User_for_snippets.png" />
-									</div>
-									<p className="user-name">{accountInfo.hoTen}</p>
-									<div className="bottom-line"></div>
-								</div>
+							<div className="col-3 profile-nav ">
+								<div className="profile-navigation-bar">
 
-								{/* Nav tabs */}
-								<ul className="nav nav-tabs container profile-list-menu">
-									<li className="nav-item">
-										<a className="nav-link active" data-toggle="tab" href="#home">
-											Thông tin tài khoản
+
+									<div className="border-avatar">
+										<div className="profile-avatar">
+											<img src="http://bootdey.com/img/Content/User_for_snippets.png" />
+										</div>
+										<p className="user-name">{accountInfo.hoTen}</p>
+										<div className="bottom-line"></div>
+									</div>
+
+									{/* Nav tabs */}
+									<ul className="nav nav-tabs container profile-list-menu">
+										<li className="nav-item">
+											<a className="nav-link active" data-toggle="tab" href="#home">
+												Thông tin tài khoản
 									</a>
-									</li>
-									<li className="nav-item">
-										<a className="nav-link" data-toggle="tab" href="#menu1">
-											Khóa học ghi danh
+										</li>
+										<li className="nav-item">
+											<a className="nav-link" data-toggle="tab" href="#menu1">
+												Khóa học ghi danh
 									</a>
-									</li>
-									<li className="nav-item">
-										<a className="nav-link" data-toggle="tab" href="#menu2">
-											Khóa học của tôi
+										</li>
+										<li className="nav-item">
+											<a className="nav-link" data-toggle="tab" href="#menu2">
+												Khóa học của tôi
 									</a>
-									</li>
-								</ul>
+										</li>
+									</ul>
+								</div>
 							</div>
 
 							<div className="col-9 profile-infomation-table">
