@@ -71,7 +71,9 @@
 				.more-infomation {
 					display: flex;
 					justify-content: space-between;
-					align-items: center;
+					.more-info-item{
+						text-align: center;
+					}
 					span {
 						font-size: 12px;
 						margin-left: 3px;
@@ -81,12 +83,6 @@
 						color: $color-pr-3;
 					}
 					.dollar {
-						font-size: 12px;
-						color: $color-pr-3;
-						label {
-							color: #000;
-							margin-bottom: 0px;
-						}
 						p{
 							color: $color-pr-1;
 						}

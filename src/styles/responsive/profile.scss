@@ -1,7 +1,18 @@
+@include mediaQuery('xl'){
+    .profileUser{
+        margin-top: 47px;
+    }
+}
 .profileUser{
     @include mediaQuery('xl'){
         .wrap-profileUser{
-            padding: 40px 40px ;
+            padding: 40px 10px ;
+        }
+        .profile-nav, .profile-infomation-table{
+            padding: 7px;
+        }
+        .wrap-profileUser .profile-navigation-bar{
+            border-radius: 5px;
         }
         .wrap-profileUser .profile-navigation-bar .border-avatar .user-name{
               font-size: 16px ;
@@ -14,6 +25,7 @@
       .wrap-profileUser .profile-infomation-table .profile-table-menu{
         padding: 15px 40px ;
         min-height: 620px ;
+        border-radius: 5px;
         .Table-header{
             padding: 12px;
         }
@@ -82,7 +94,11 @@
     }
 
     }
-
+    @include mediaQuery('lg'){
+        .wrap-profileUser .profile-infomation-table .profile-table-menu{
+            padding: 15px;
+        }
+    }
     @include mediaQuery('md'){
         .wrap-profileUser{
             padding: 35px 0px ;
@@ -181,7 +197,7 @@
       }
       @include mediaQuery('sm'){
         .wrap-profileUser{
-            padding: 25px 0px ;
+            padding: 25px 0;
         }
         .border-avatar{
             .user-name{
@@ -242,7 +258,7 @@
           .content {
               .header-list-cart {
                   font-size: 10px;
-                  padding: 10px 10px 10px 35px !important;
+                  padding: 5px 5px 5px 35px !important
               }
               .mct-list-cart{
                   .no-course {
@@ -252,7 +268,7 @@
           }
       }
       .mct-list-cart {
-          padding: 0px 10px !important;
+          padding: 0px 5px !important;
           .item-course-of-user{
               padding: 5px 5px;
               margin: 10px 0px;
@@ -260,6 +276,7 @@
                   img {
                     width: 60px !important;
                     height: 40px !important;
+                    margin-left: 5px;
                   }
                   .mct-item-course-of-user {
                       margin-left: 5px;
@@ -284,7 +301,8 @@
                   }
               }
           }
-      }
-      }
+        }
+        
+    }
 }
 

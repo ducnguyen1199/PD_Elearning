@@ -3,9 +3,8 @@
 	width: 100%;
 	overflow: hidden;
 	.wrap-profileUser {
-		padding: 50px 120px;
-		background-color: #eeeded;
-		
+		padding: 50px ;
+		background: linear-gradient(to right, $color-pr-4, $color-se-3);
 		.profile-navigation-bar {
 			padding: 15px;
 			background: white;
@@ -44,7 +43,7 @@
 					.nav-link {
 						border: 0px;
 						border-radius: 0px;
-						padding: 13px 50px;
+						padding: 13px;
 						text-decoration: none;
 						color: black;
 						font-size: 18px;
