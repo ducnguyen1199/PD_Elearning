@@ -1,3 +1,8 @@
+@include mediaQuery('xl'){
+    .About-page{
+        margin-top: 47px;
+    }
+}
 .About-page{
     @include mediaQuery('xl'){
         h2{
@@ -7,7 +12,7 @@
             font-size: 32px !important;
         }
         p{
-            font-size: 16px !important;
+            font-size: 14px !important;
         }
         
          .Our-team-mate{

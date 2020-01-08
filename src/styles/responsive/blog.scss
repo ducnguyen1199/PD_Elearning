@@ -1,3 +1,11 @@
+@include mediaQuery('xl'){
+    .blog{
+        margin-top: 47px;
+        .blog-content {
+            padding: 50px;
+        }
+    }
+}
 @include mediaQuery('lg'){
     .blog {
         .blog-content {
