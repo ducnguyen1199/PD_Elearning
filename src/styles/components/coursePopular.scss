@@ -9,10 +9,11 @@
 		margin-bottom: 30px;
 		font-weight: $fw-bold-2;
 		position: relative;
+		color:rgb(116, 116, 116);
 		&::after {
 			content: '';
 			@include absolute_bottom(-9px, 0, 40%, 3px);
-			background: black;
+			background: rgb(116, 116, 116);;
 			content: '';
 		}
 	}

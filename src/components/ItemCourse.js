@@ -37,7 +37,7 @@ class ItemCourse extends Component {
 			}) === -1 ? (
 				this.renderAddToCart()
 			) : (
-				<NavLink className="btn--white btnn" to="/home/profile" onClick={this.goTop}>
+				<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
 					TỚI HỒ SƠ
 				</NavLink>
 			)

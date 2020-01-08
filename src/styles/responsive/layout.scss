@@ -3,7 +3,6 @@
         .navbar{
             padding: 0 50px;
             .navbar-brand {
-                width: 175px;
                 img {
                     width: 35px;
                     margin-right: 5px;
@@ -39,10 +38,67 @@
                         line-height: 12px;
                         
                     }
+                    
                 }
                 .bttn{
                     padding: 7px 15px;
                     font-size:10px;
+                }
+                .cart{
+                    .total{
+                        font-size: $fs-md-lg - 3!important;
+                        margin-bottom: 15px;
+                        &::after {
+                            bottom: -7px;
+                        }
+                    }
+                    .mct-cart{
+                        transform: translateX(-65px);
+                        .no-course{
+                            font-size: $fs-md - 3;
+                        }
+                        .bttn {
+                            width: 80%;
+                            margin: 0 auto;
+                            padding: 7px 0;
+                            font-size: $fs-md;
+                        }
+                        .ct-cart{
+                            padding: 7px 15px;
+                            max-height: 240px;
+                            .item-cart{
+                                margin-bottom: 15px;
+                                &::after {
+                                    bottom: -7px;
+                                }
+                                img {
+                                    width: 80px;
+                                    height: 60px;
+                                }
+                                .ct-item-cart {
+                                    align-self: center;
+                                    margin-left: 10px;
+                                    h5 {
+                                        @include text(black, $fs-md - 3, $fw-bold-2);
+                                    }
+                                    p {
+                                        @include text(black, $fs-sm - 1, $fw-thin);
+                                    }
+                                    .fee {
+                                        @include text($color-pr-1, $fs-md-lg - 3, $fw-bold-1);
+                                    }
+                                }
+                                i {
+                                    font-size: $fs-md-lg - 5;
+                                    color: rgba(0, 0, 0, 0.7);
+                                    cursor: pointer;
+                                    &:hover {
+                                        color: rgba(255, 0, 0, 0.5);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             } 
         }
@@ -130,50 +186,17 @@
                         }
                     }
                     .mct-cart{
-                        transform: translateX(-65px);
+                        transform: translateX(30px);
+                        width: 250px;
                         .no-course{
                             font-size: $fs-md - 3;
                         }
                         .bttn {
-                            width: 80%;
-                            margin: 0 auto;
-                            padding: 7px 0;
-                            font-size: $fs-md;
+                            width: 90%;
+                            font-size: $fs-md - 5;
                         }
-                        .ct-cart{
-                            padding: 7px 15px;
-                            max-height: 240px;
-                            .item-cart{
-                                margin-bottom: 15px;
-                                &::after {
-                                    bottom: -7px;
-                                }
-                                img {
-                                    width: 80px;
-                                    height: 60px;
-                                }
-                                .ct-item-cart {
-                                    align-self: center;
-                                    margin-left: 10px;
-                                    h5 {
-                                        @include text(black, $fs-md - 3, $fw-bold-2);
-                                    }
-                                    p {
-                                        @include text(black, $fs-sm - 1, $fw-thin);
-                                    }
-                                    .fee {
-                                        @include text($color-pr-1, $fs-md-lg - 3, $fw-bold-1);
-                                    }
-                                }
-                                i {
-                                    font-size: $fs-md-lg - 5;
-                                    color: rgba(0, 0, 0, 0.7);
-                                    cursor: pointer;
-                                    &:hover {
-                                        color: rgba(255, 0, 0, 0.5);
-                                    }
-                                }
-                            }
+                        .ct-item-cart h5{
+                            @include text_overflow(1);
                         }
                     }
                 }
