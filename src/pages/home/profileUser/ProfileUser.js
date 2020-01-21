@@ -5,6 +5,7 @@ import AccountInfo from './AccountInfo';
 import CourseAttended from './CourseAttended';
 import CourseAccepted from './CourseAccepted';
 import Loading from '../../../components/Loading';
+import Swal from 'sweetalert2';
 class ProfileUser extends Component {
 	componentDidMount() {
 		window.scroll({
@@ -12,10 +13,23 @@ class ProfileUser extends Component {
 			left: 0,
 			behavior: 'smooth',
 		});
-		this.props.getInfoAccount();
+		if (localStorage.getItem('user')) {
+			this.props.getInfoAccount();
+		} else {
+			Swal.fire({
+				position: 'center',
+				icon: 'error',
+				html: `<h3 style="color:#f27474"><b>ERROR!</b></h3><b>VUI LÒNG ĐĂNG NHẬP</b>`,
+				showConfirmButton: false,
+				timer: 1000,
+			}).then(() => (
+				this.props.propsCompnent.history.push("/"))
+			)
+
+		}
+
 	}
 	render() {
-
 		let { accountInfo } = this.props;
 		return (
 			<Fragment>

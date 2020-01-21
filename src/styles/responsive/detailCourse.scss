@@ -1,0 +1,145 @@
+.detail-Course{
+    @include mediaQuery('xl'){
+        .col-3{
+            padding: 12px !important;
+        }
+        .body-detailCourse .Information-Course .tittle-course{
+            font-size: 27px;
+        }
+        .body-detailCourse .Information-Course .info-content .item-content .content{
+            p{
+                font-size: 14px;
+                p{
+                    font-size: 12px;
+                }
+            }
+            button{
+                    padding: 7px 15px !important;
+                    font-size: 13px;
+                }
+            a{
+                    padding: 7px 15px !important;
+                    font-size: 13px;
+                    display: block;
+                    text-align: center;
+            }   
+        }
+       .body-detailCourse .FearureCourse .featre-tittle{
+           font-size: 27px;
+           text-align: center;
+       }
+       .body-detailCourse .FearureCourse ul li span{
+           font-size: 15px;
+       }
+        
+    }
+
+    @include mediaQuery('md'){
+            .col-3{
+                padding: 8px !important;
+            }
+            .body-detailCourse .Information-Course .tittle-course{
+                font-size: 22px;
+            }
+            .body-detailCourse .Information-Course .info-content .item-content .content{
+                p{
+                    font-size: 12px;
+                    p{
+                        font-size: 10px;
+                    }
+                }
+                button{
+                        padding: 7px 15px !important;
+                        font-size: 12px;
+                    }
+                a{
+                        padding: 7px 15px !important;
+                        font-size: 12px;
+                        display: block;
+                        text-align: center;
+                }   
+            }
+           .body-detailCourse .FearureCourse .featre-tittle{
+               font-size: 22px;
+               text-align: center;
+           }
+           .body-detailCourse .FearureCourse ul li span{
+               font-size: 12px;
+           }
+           .body-detailCourse .FearureCourse ul li{
+               padding: 10px 0px;
+           }
+           .body-detailCourse .image-detail-course img{
+            height: 300px;
+       }
+        }
+        
+        
+    @include mediaQuery('sm'){
+            .col-8{
+                padding: 5px !important;
+            }
+            .col-4{
+                padding: 5px !important;
+            }
+            .col-3{
+                padding: 5px !important;
+            }
+            .body-detailCourse .Information-Course .info-content .teacher-img{
+                display: none;
+            }
+            .body-detailCourse .Information-Course .tittle-course{
+                font-size: 14px;
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            .body-detailCourse .Information-Course .tittle-course span{
+                padding: 3px 10px;
+                margin-left: 5px;
+                background-color: #40c4ff;
+                color: white;
+                border-radius: 13px;
+                font-size: 14px;
+               
+            }
+            .body-detailCourse .Information-Course .info-content .item-content .content{
+                p{
+                    font-size: 12px;
+                    p{
+                        font-size: 10px;
+                    }
+                }
+                button{
+                        padding: 5px 10px !important;
+                        font-size: 10px;
+                    }
+                a{
+                        padding: 5px 10px !important;
+                        font-size: 10px;
+                        display: block;
+                        text-align: center;
+                }   
+            }
+           .body-detailCourse .FearureCourse .featre-tittle{
+               font-size: 14px;
+               text-align: center;
+           }
+           .body-detailCourse .FearureCourse ul li span{
+               font-size: 10px;
+           }
+           .body-detailCourse .FearureCourse ul li{
+               padding: 5px 0px;
+           }
+            .body-detailCourse .image-detail-course img{
+                height: 200px;
+           }
+            
+        }
+
+}
+
+
+    
+    
+
+

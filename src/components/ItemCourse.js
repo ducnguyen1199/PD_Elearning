@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions/index';
@@ -37,46 +37,53 @@ class ItemCourse extends Component {
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === this.props.course.maKhoaHoc;
 			}) === -1 ? (
-				this.renderAddToCart()
-			) : (
-				<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
-					TỚI HỒ SƠ
+					this.renderAddToCart()
+				) : (
+					<NavLink className="btn--purple btnn" to="/home/profile" onClick={this.goTop}>
+						TỚI HỒ SƠ
 				</NavLink>
 				)
 		) : (
 				this.renderAddToCart()
 			);
 	};
+
+
 	renderPopover = () => {
 		let { course } = this.props;
 		return (
-			<UncontrolledPopover trigger="hover" placement="right" target={'Popover-' + this.props.id}>
-				<PopoverBody>
-					<div className="course-info">
-						<div className="course-infomation">
-							<p className="text-sm">Ngày khởi tạo: {course.ngayTao}
+			<Fragment>
+				<UncontrolledPopover trigger="hover" placement="right" target={'Popover-' + this.props.id}>
+					<PopoverBody>
+						<div className="course-info">
+							<div className="course-infomation">
+								<p className="text-sm">Ngày khởi tạo: {course.ngayTao}
 
-							</p>
-							<h3 className="course-name">{course.tenKhoaHoc}</h3>
-							<p className="text-sm">{course.danhMucKhoaHoc.tenDanhMucKhoaHoc}</p>
-							<span className="more-infomation">
-								<i className="fa fa-eye"></i> {course.luotXem} | <i className="fa fa-mortar-board"></i>
-								{course.soLuongHocVien} | <i className="fa fa-heart"></i> 99
+								</p>
+								<h3 className="course-name">{course.tenKhoaHoc}</h3>
+								<p className="text-sm">{course.danhMucKhoaHoc.tenDanhMucKhoaHoc}</p>
+								<span className="more-infomation">
+									<i className="fa fa-eye"></i> {course.luotXem} | <i className="fa fa-mortar-board"></i>
+									{course.soLuongHocVien} | <i className="fa fa-heart"></i> 99
 							</span>
-							<p className="course-description">{course.moTa}</p>
-							<div className="detail-course">
-								<NavLink
-									className="btn--black"
-									to={`/home/detail-course/${course.maKhoaHoc}?${course.fee}`}
-								>
-									Chi Tiết
+								<p className="course-description">{course.moTa}</p>
+								<div className="detail-course">
+									<NavLink
+										className="btn--black"
+										to={`/home/detail-course/${course.maKhoaHoc}?${course.fee}`}
+										onClick={() => {
+											this.props.getDataDetailCourse(course.maKhoaHoc);
+										}}
+									>
+										Chi Tiết
 								</NavLink>
-								{this.handleAddToCart()}
+									{this.handleAddToCart()}
+								</div>
 							</div>
 						</div>
-					</div>
-				</PopoverBody>
-			</UncontrolledPopover>
+					</PopoverBody>
+				</UncontrolledPopover >
+			</Fragment>
 		);
 	};
 	render() {
@@ -122,10 +129,10 @@ class ItemCourse extends Component {
 											</span>
 										</div>
 										<div className="more-info-item">
-												<span className="dollar">
+											<span className="dollar">
 												<i class="fa fa-money"></i> <label>Giá</label>
-													<p>{course.fee}$</p>
-												</span>
+												<p>{course.fee}$</p>
+											</span>
 										</div>
 									</div>
 								</div>
@@ -148,6 +155,9 @@ const mapDispatchToProps = dispatch => {
 		addToCart: product => {
 			dispatch(actions.actAddToCart(product));
 		},
+		getDataDetailCourse: (id) => {
+			dispatch(actions.actGetDetailCourseAPI(id));
+		}
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ItemCourse));
