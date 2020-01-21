@@ -24,29 +24,37 @@ class DetailCourse extends Component {
 			fee: search.slice(1, search.length),
 		});
 	}
+	componentDidUpdate(NextProps) {
+		if (this.props.propsCompnent.match.params.id !== NextProps.propsCompnent.match.params.id) {
+			let { search } = this.props.propsCompnent.location;
+			this.setState({
+				fee: search.slice(1, search.length),
+			});
+		}
+	}
 	renderAddToCart = () => {
 		let id2 = this.props.propsCompnent.match.params.id;
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === id2;
 		}) === -1 ? (
-			<button
-				className="btn--blue btnn"
-				onClick={() => {
-					this.props.addToCart({
-						course: {
-							...this.props.dataDetailCourse,
-							fee: Number(this.state.fee),
-						},
-					});
-				}}
-			>
-				THÊM GIỎ HÀNG
-			</button>
-		) : (
-			<NavLink className="btn--purple btnn" to="/home/detail-cart">
-				TỚI GIỎ HÀNG
-			</NavLink>
-		);
+				<button
+					className="btn--blue btnn"
+					onClick={() => {
+						this.props.addToCart({
+							course: {
+								...this.props.dataDetailCourse,
+								fee: Number(this.state.fee),
+							},
+						});
+					}}
+				>
+					THÊM GIỎ HÀNG
+				</button>
+			) : (
+				<NavLink className="btn--purple btnn" to="/home/detail-cart">
+					ĐẾN GIỎ HÀNG
+				</NavLink>
+			);
 	};
 	handleAddToCart = () => {
 		let id3 = this.props.propsCompnent.match.params.id;
@@ -54,18 +62,17 @@ class DetailCourse extends Component {
 			this.props.courseOfUser.findIndex(item => {
 				return item.maKhoaHoc === id3;
 			}) === -1 ? (
-				this.renderAddToCart()
-			) : (
-				<NavLink className="btn--purple btnn" to="/home/profile">
-					TỚI HỒ SƠ
+					this.renderAddToCart()
+				) : (
+					<NavLink className="btn--purple btnn" to="/home/profile">
+						TỚI HỒ SƠ
 				</NavLink>
-			)
+				)
 		) : (
-			this.renderAddToCart()
-		);
+				this.renderAddToCart()
+			);
 	};
 	render() {
-		console.log(window.location);
 		return (
 			<Fragment>
 				<Loading />
@@ -121,7 +128,7 @@ class DetailCourse extends Component {
 																<p>
 																	{this.props.dataDetailCourse.danhMucKhoaHoc
 																		? this.props.dataDetailCourse.danhMucKhoaHoc
-																				.tenDanhMucKhoaHoc
+																			.tenDanhMucKhoaHoc
 																		: ''}{' '}
 																</p>
 															</p>
@@ -174,7 +181,7 @@ class DetailCourse extends Component {
 													<span>
 														{this.props.dataDetailCourse.danhMucKhoaHoc
 															? this.props.dataDetailCourse.danhMucKhoaHoc
-																	.tenDanhMucKhoaHoc
+																.tenDanhMucKhoaHoc
 															: ''}
 													</span>
 												</span>

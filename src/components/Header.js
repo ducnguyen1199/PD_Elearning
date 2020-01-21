@@ -88,6 +88,7 @@ class Header extends Component {
 	};
 	handleLogout = () => {
 		localStorage.removeItem('user');
+		localStorage.removeItem('infoAccount');
 		window.location.replace('/');
 	};
 	savePrevPage = () => {
@@ -106,8 +107,8 @@ class Header extends Component {
 							</NavLink>
 						</div>
 					) : (
-						''
-					)}
+							''
+						)}
 					<div className="account">
 						<div>
 							<div className="account-img">
@@ -217,20 +218,20 @@ class Header extends Component {
 								{this.props.listCart.length === 0 ? (
 									<div className="no-course">Không có khóa học nào trong giỏ hàng</div>
 								) : (
-									<Fragment>
-										<div className="total">TOTAL: ${this.totalCart()}</div>
-										<div className="ct-cart">{this.renderCart()}</div>
-										<div className="d-flex justify-content-around">
-											<NavLink
-												className="btn--blue bttn"
-												to="/home/detail-cart"
-												onClick={this.goTop}
-											>
-												ĐI TỚI GIỎ HÀNG
+										<Fragment>
+											<div className="total">TOTAL: ${this.totalCart()}</div>
+											<div className="ct-cart">{this.renderCart()}</div>
+											<div className="d-flex justify-content-around">
+												<NavLink
+													className="btn--blue bttn"
+													to="/home/detail-cart"
+													onClick={this.goTop}
+												>
+													ĐI TỚI GIỎ HÀNG
 											</NavLink>
-										</div>
-									</Fragment>
-								)}
+											</div>
+										</Fragment>
+									)}
 							</div>
 						</div>
 						{this.renderAccount()}

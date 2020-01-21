@@ -17,7 +17,9 @@ const KhoaHocReducer = (state = initialState, action) => {
 			state.listCategoryCourse = action.listCategoryCourse;
 			return { ...state };
 		case actionTypes.GET_DETAIL_COURSE:
-			state.dataDetailCourse = action.dataDetailCourse;
+			let listDataDetailCourse = { ...state.dataDetailCourse };
+			listDataDetailCourse = action.dataDetailCourse;
+			state.dataDetailCourse = listDataDetailCourse;
 			return { ...state };
 		case actionTypes.ADD_NEW_COURSE:
 			state.listCourse = [...state.listCourse, action.data];
