@@ -41,9 +41,8 @@ const NguoiDungReducer = (state = initialState, action) => {
 			userList3[x2] = action.data;
 			state.userList = userList3;
 			let test = { ...state.accountInfo }
-			test.hoTen = action.data.hoTen;
+			test = action.data;
 			state.accountInfo = test;
-
 			return { ...state };
 		case actionTypes.GET_INFO_ACCOUNT:
 			state.accountInfo = action.data;
