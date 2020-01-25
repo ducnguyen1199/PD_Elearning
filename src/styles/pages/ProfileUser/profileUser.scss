@@ -3,8 +3,18 @@
 	width: 100%;
 	overflow: hidden;
 	.wrap-profileUser {
-		padding: 50px ;
-		background: linear-gradient(to right, $color-pr-4, $color-se-3);
+		padding: 50px;
+		position: relative;
+		.bg-profile{
+			background-size:cover;
+			background-position: center;
+			@include absolute(0,0,100%,100%);
+			&::after{
+				content: "";
+				@include absolute(0,0,100%,100%);
+				background: rgba(0, 0, 0, 0.2);
+			}
+		}
 		.profile-navigation-bar {
 			padding: 15px;
 			background: white;

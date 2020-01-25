@@ -60,6 +60,7 @@
 			}
 		}
 		.navbar-nav {
+			margin-top: 12px!important;
 			.nav-item {
 				margin-right: 5px;
 				.nav-link {
@@ -67,10 +68,10 @@
 					font-family: $font-title !important;
 					letter-spacing: 1px;
 					&:hover {
-						color: $color-pr-3 !important;
+						color: $color-pr-4 !important;
 					}
 					&.active {
-						color: $color-pr-2 !important;
+						color: $color-pr-3 !important;
 						font-weight: $fw-bold-2;
 					}
 				}

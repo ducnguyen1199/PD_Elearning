@@ -151,7 +151,7 @@
 				&::before {
 					content: '';
 					@include absolute(0, 0, 100%, 100%);
-					background-color: rgba(0, 0, 0, 0.7);
+					background-color: rgba(0, 0, 0, 1);
 					opacity: 0.6;
 					z-index: -11;
 				}
@@ -225,6 +225,9 @@
 						font-size: $fs-md;
 						font-family: $font-text;
 						font-weight: $fw-bold-1;
+						border-radius: 30px;
+						display: flex;
+						align-items: center;
 					}
 					i {
 						align-self: center;
