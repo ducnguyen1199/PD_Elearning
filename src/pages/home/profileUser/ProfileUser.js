@@ -21,7 +21,8 @@ class ProfileUser extends Component {
 			<Fragment>
 				<Loading />
 				<section className="profileUser">
-					<div className="wrap-profileUser">
+					<div className="wrap-profileUser" >
+						<div className="bg-profile" style={{backgroundImage: "url('../../img/profile.jpg')"}}></div>
 						<div className="row m-0 all-table">
 							<div className="col-3 profile-nav ">
 								<div className="profile-navigation-bar">

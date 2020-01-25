@@ -174,7 +174,7 @@ class Header extends Component {
 						<h1>Elearning</h1>
 					</NavLink>
 					<div className="collapse navbar-collapse" id="collapsibleNavId">
-						<ul className="navbar-nav mr-auto mt-2">
+						<ul className="navbar-nav m-auto">
 							<li className="nav-item">
 								<NavLink
 									className="nav-link"

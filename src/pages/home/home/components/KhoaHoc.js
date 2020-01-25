@@ -10,16 +10,17 @@ class KhoaHoc extends Component {
 		return this.props.listCart.findIndex(item => {
 			return item.course.maKhoaHoc === this.props.course.maKhoaHoc;
 		}) === -1 ? (
-			<button
-				className="btn--blue btnn"
+			//btn--blue btnn
+			<a
+				className="btn-leon"
 				onClick={() => {
 					this.props.addToCart(this.props);
 				}}
 			>
 				THÊM GIỎ HÀNG
-			</button>
+			</a>
 		) : (
-			<NavLink className="btn--purple btnn" to="/home/detail-cart">
+			<NavLink className="btn--blue btnn" to="/home/detail-cart">
 				TỚI GIỎ HÀNG
 			</NavLink>
 		);
