@@ -38,7 +38,7 @@ class DetailCourse extends Component {
 			return item.course.maKhoaHoc === id2;
 		}) === -1 ? (
 				<button
-					className="btn--blue btnn"
+					className="btn-leon btnn"
 					onClick={() => {
 						this.props.addToCart({
 							course: {
@@ -51,7 +51,7 @@ class DetailCourse extends Component {
 					THÊM GIỎ HÀNG
 				</button>
 			) : (
-				<NavLink className="btn--purple btnn" to="/home/detail-cart">
+				<NavLink className="btn--blue btnn" to="/home/detail-cart">
 					ĐẾN GIỎ HÀNG
 				</NavLink>
 			);

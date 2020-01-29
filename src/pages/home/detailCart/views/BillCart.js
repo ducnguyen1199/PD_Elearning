@@ -47,9 +47,13 @@ class BillCart extends Component {
 					<p className="fee">${parseInt(this.totalCart() * 1.1)}</p>
 				</div>
 				<p className="text-right">Đã bao gồm VAT (nếu có)</p>
-				<button className="btn--blue" onClick={this.handleOnRegister}>
+				<span className="btn-neon bttn" onClick={this.handleOnRegister}>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
 					TIẾN HÀNH THANH TOÁN
-				</button>
+				</span>
 			</section>
 		);
 	}

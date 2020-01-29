@@ -99,7 +99,8 @@
 				letter-spacing: 1px;
 				display: inline-block;
 				height: 50px;
-				line-height: 33px;
+				line-height: 25px;
+				font-weight: bold;
 			}
 		}
 	}
@@ -108,14 +109,14 @@
 		bottom: 80px;
 		left: 50%;
 		transform: translateX(-50%);
-		cursor: pointer;
 	}
 	.arrow-down span {
+		cursor: pointer;
 		display: block;
 		width: 50px;
 		height: 50px;
-		border-bottom: 2px solid $color-se-3;
-		border-right: 2px solid $color-se-3;
+		border-bottom: 3px solid $color-se-3;
+		border-right: 3px solid $color-se-3;
 		transform: rotate(45deg);
 		margin: -35px;
 		animation: animate 2s infinite;

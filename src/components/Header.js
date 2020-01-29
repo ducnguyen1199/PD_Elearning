@@ -223,10 +223,14 @@ class Header extends Component {
 											<div className="ct-cart">{this.renderCart()}</div>
 											<div className="d-flex justify-content-around">
 												<NavLink
-													className="btn--blue bttn"
+													className="btn-neon bttn"
 													to="/home/detail-cart"
 													onClick={this.goTop}
 												>
+													<span></span>
+													<span></span>
+													<span></span>
+													<span></span>
 													ĐI TỚI GIỎ HÀNG
 											</NavLink>
 											</div>

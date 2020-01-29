@@ -46,7 +46,6 @@
 		box-shadow: 0 0 5px 0 #0000005e;
 		flex-wrap: nowrap;
 		.navbar-brand {
-			// width: 250px;
 			display: flex;
 			img {
 				width: 50px;
@@ -222,7 +221,7 @@
 						padding: 10px 0;
 						font-size: $fs-md + 5;
 						font-family: $font-title;
-						background: linear-gradient(to right, #8dd6f9,#00aeff,#8dd6f9);
+						-webkit-box-reflect: inherit
 					}
 				}
 				&:hover {
