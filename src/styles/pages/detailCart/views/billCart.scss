@@ -43,11 +43,12 @@
 	.text-right {
 		@include text(rgba(0, 0, 0, 0.5), $fs-sm, normal);
 	}
-	.btn--blue {
+	.bttn {
 		width: 100%;
-		font-size: $fs-md-lg;
+		font-size: $fs-md + 5;
 		margin-top: 20px;
+		margin-bottom: 20px;;
 		font-family: $font-title;
-		background: linear-gradient(to right, #63c9f8,#00aeff,#63c9f8);
+		cursor: pointer;
 	}
 }

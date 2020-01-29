@@ -67,7 +67,7 @@ class Intro extends Component {
 								></input>
 								{this.state.keyword ? <div className="content-search">{this.renderContenSearch()}</div>: ""}
 							</div>
-							<NavLink to={`/home/courses/all?${this.state.keyword}`} className="btn--blue bttn">
+							<NavLink to={`/home/courses/all?${this.state.keyword}`} className="btn-cool bttn">
 								SEARCH
 							</NavLink>
 						</div>
