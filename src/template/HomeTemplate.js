@@ -1,29 +1,34 @@
-import React, { Fragment, useState } from 'react';
-import { Route } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Loading from '../components/Loading';
+import React, { Fragment, useEffect } from "react";
+import { Route, useLocation } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const HomeLayout = props => {
-	return (
-		<Fragment>
-			<Header />
-			{props.children}
-			<Footer />
-		</Fragment>
-	);
+const HomeLayout = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
+  return (
+    <Fragment>
+      <Header />
+      {props.children}
+      <Footer />
+    </Fragment>
+  );
 };
 export default function HomeTeamplate({ Component, ...props }) {
-	return (
-		<Fragment>
-			<Route
-				{...props}
-				render={propsCompnent => (
-					<HomeLayout>
-						<Component propsCompnent={{ ...propsCompnent }} />
-					</HomeLayout>
-				)}
-			/>
-		</Fragment>
-	);
+  return (
+    <HomeLayout>
+      <Route
+        {...props}
+        render={(propsCompnent) => (
+          <Component propsCompnent={{ ...propsCompnent }} />
+        )}
+      />
+    </HomeLayout>
+  );
 }

@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
+import React from "react";
+import "./Loading.scss";
+const Loading = () => {
+  return (
+    <div className="loading">
+      <div className="loading-animate">
+        <span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div className="base">
+          <span></span>
+          <div className="face"></div>
+        </div>
+      </div>
+      <div className="longfazers">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  );
+};
 
-export default class Loading extends Component {
-	render() {
-		return (
-			<div className="loading">
-				<div className="loading-animate">
-					<span>
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-					<div className="base">
-						<span></span>
-						<div className="face"></div>
-					</div>
-				</div>
-				<div className="longfazers">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		);
-	}
-}
+export default Loading;
