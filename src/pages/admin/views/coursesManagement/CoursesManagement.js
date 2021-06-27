@@ -35,7 +35,7 @@ const CoursesManagement = props => {
 								<img src={item.hinhAnh} alt={item.tenKhoaHoc} />
 								<div>
 									<p>{item.tenKhoaHoc}</p>
-									<p className="cm-category">{item.danhMucKhoaHoc.tenDanhMucKhoaHoc}</p>
+									<p className="cm-category">{item.danhMucKhoaHoc?.tenDanhMucKhoaHoc}</p>
 									<NavLink className="btn--purple" to={`/admin/detail-course/${item.maKhoaHoc}`}>
 										VIEW DETAIL
 									</NavLink>
@@ -60,7 +60,7 @@ const CoursesManagement = props => {
 										props.onEdit(item);
 									}}
 								>
-									<i class="fa fa-edit"></i>
+									<i className="fa fa-edit"></i>
 								</button>
 								<button
 									className="bttn btn--red"
@@ -83,7 +83,7 @@ const CoursesManagement = props => {
 										});
 									}}
 								>
-									<i class="fa fa-trash "></i>
+									<i className="fa fa-trash "></i>
 								</button>
 							</div>
 						</td>
@@ -96,7 +96,7 @@ const CoursesManagement = props => {
 			<Loading />
 			<section className="course-management">
 				<h3 className="title">
-					<i class="fa fa-book" aria-hidden="true"></i> COURSES MANAGEMENT
+					<i className="fa fa-book" aria-hidden="true"></i> COURSES MANAGEMENT
 				</h3>
 				<div className="cm-head">
 					<button
@@ -108,7 +108,7 @@ const CoursesManagement = props => {
 							props.onEdit('');
 						}}
 					>
-						<i class="fa fa-plus" aria-hidden="true"></i>ADD COURSE
+						<i className="fa fa-plus" aria-hidden="true"></i>ADD COURSE
 					</button>
 					<input
 						placeholder="Search course"

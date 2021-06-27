@@ -1,25 +1,31 @@
-import React, { Fragment } from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Redirect, useLocation } from "react-router-dom";
 
-const AdminLayout = props => {
-  return <Fragment>{props.children}</Fragment>;
+const AdminLayout = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
+  return <>{props.children}</>;
 };
 
 export default function AdminTemplate({ Component, ...props }) {
   return (
-    <div className="admin">
+    <AdminLayout>
       <Route
         {...props}
-        render={propsComponent => {
-          if (localStorage.getItem('userAdmin'))
-            return <AdminLayout>
-              <Component propsComponent={propsComponent} />
-            </AdminLayout>
+        render={(propsComponent) => {
+          if (localStorage.getItem("userAdmin"))
+            return <Component propsComponent={propsComponent} />;
           else {
-            return <Redirect to="/admin" />
+            return <Redirect to="/admin" />;
           }
         }}
       />
-    </div>
+    </AdminLayout>
   );
 }

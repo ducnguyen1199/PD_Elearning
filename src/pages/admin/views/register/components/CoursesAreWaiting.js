@@ -13,7 +13,7 @@ const CoursesAreWaiting = props => {
 					<td>{item.tenKhoaHoc}</td>
 					<td>
 						<i
-							class="fa fa-check"
+							className="fa fa-check"
 							aria-hidden="true"
 							onClick={() => {
 								props.acceptCourse({
@@ -24,7 +24,7 @@ const CoursesAreWaiting = props => {
 							}}
 						></i>
 						<i
-							class="fa fa-times"
+							className="fa fa-times"
 							aria-hidden="true"
 							onClick={() => {
 								Swal.fire({
@@ -65,10 +65,10 @@ const CoursesAreWaiting = props => {
 					{props.listCourseWaiting.length ? (
 						renderTableHTML()
 					) : (
-							<td colSpan="5" className="message">
-								Không có khóa học
+						<td colSpan="5" className="message">
+							Không có khóa học
 						</td>
-						)}
+					)}
 				</tbody>
 			</table>
 		</Fragment>

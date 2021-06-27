@@ -93,7 +93,7 @@ const UsersManagement = props => {
 			<section className="user-management">
 				<div className="user-management-tittle">
 					<h3 className="title">
-						<i class="fa fa-users" aria-hidden="true"></i>
+						<i className="fa fa-users" aria-hidden="true"></i>
 						USER MANAGEMENT
 					</h3>
 				</div>
@@ -110,7 +110,7 @@ const UsersManagement = props => {
 							});
 						}}
 					>
-						<i class="fa fa-plus" aria-hidden="true"></i>ADD USER
+						<i className="fa fa-plus" aria-hidden="true"></i>ADD USER
 					</button>
 					<input placeholder="Search user" onChange={handleOnchange} />
 				</div>

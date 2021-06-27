@@ -1,175 +1,195 @@
 .btn--blue {
-	@include button(white, $color-pr-2, white, $color-pr-1);
+  @include button(white, $color-pr-2, white, $color-pr-1);
 }
 .btn--white {
-	@include button(black, rgba(255, 255, 255, 0.8), black, white);
+  @include button(black, rgba(255, 255, 255, 0.8), black, white);
 }
 .btn--black {
-	@include button(white, rgba(0, 0, 0, 0.6), white, rgba(0, 0, 0, 0.8));
+  @include button(white, rgba(0, 0, 0, 0.6), white, rgba(0, 0, 0, 0.8));
 }
 .btn--purple {
-	@include button(white, $color-se-2, white, $color-se-1);
+  @include button(white, $color-se-2, white, $color-se-1);
 }
 .btn--green {
-	@include button(white, #4caf50, white, #4caf50);
+  @include button(white, #4caf50, white, #4caf50);
 }
 .btn--red {
-	@include button(white, #d32f2f, white, #d32f2f);
+  @include button(white, #d32f2f, white, #d32f2f);
 }
 .btn-leon {
-	position: relative;
-	display: flex;
-	align-items: center;
-	padding: 7px 15px;
-    text-align: center;
-    color:white;
-    font-size: $fs-md;
-	font-family: $font-text;
-	font-weight: $fw-bold-1;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 7px 15px;
+  text-align: center;
+  color: white;
+  font-size: $fs-md;
+  font-family: $font-text;
+  font-weight: $fw-bold-1;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(90deg, #03a9f4, rgb(72, 68, 35), #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  animation: effect_leon 8s linear infinite;
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, rgb(72, 68, 35), #03a9f4);
     background-size: 400%;
-	border-radius: 30px;
-	animation: effect_leon 8s linear infinite;
-	cursor: pointer;
-	&::before{
-		content: '';
-		position: absolute;
-		top: -5px;
-		left: -5px;
-		right: -5px;
-		bottom: -5px;
-		z-index: -1;
-		background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-		background-size: 400%;
-		border-radius: 40px;
-		filter: blur(20px);
-		transition: 0.2s linear;
-		animation: effect_leon 8s linear infinite;
-	}
+    border-radius: 40px;
+    filter: blur(20px);
+    transition: 0.2s linear;
+    animation: effect_leon 8s linear infinite;
+  }
 }
-@keyframes effect_leon
-{
-    0%{background-position: 0%;}
-    100%{background-position: 400%;}
+@keyframes effect_leon {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
 
 .btn-cool {
-	position: relative;
-	padding: 15px 30px;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: white!important;
-	font-size: 20px;
-	z-index: 1;
-	&::after,&::before{
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		transition: transform 0.5s;
-	}
-	&::before{
-		background: #03a9f4;
-		transform-origin: bottom right;
-		transform: scale(0)
-	}
-	&:hover::before{
-		transition: transform 0.5s;
-		transform-origin: top left;
-		transform: scale(1)
-	}
-	&::after{
-		border: 3px solid white;
-		transform-origin: top left;
-		transform: scale(1)
-	}
-	&:hover::after{
-		transition: transform 0.5s;
-		transform-origin: bottom right;
-		transform: scale(0)
-	}
+  position: relative;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white !important;
+  font-size: 20px;
+  z-index: 1;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: transform 0.5s;
+  }
+  &::before {
+    background: #03a9f4;
+    transform-origin: bottom right;
+    transform: scale(0);
+  }
+  &:hover::before {
+    transition: transform 0.5s;
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  &::after {
+    border: 3px solid white;
+    transform-origin: top left;
+    transform: scale(1);
+  }
+  &:hover::after {
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+    transform: scale(0);
+  }
 }
 
-.btn-neon{
-	background: rgba(0, 0, 0, 0.7);
-    position: relative;
-    display: inline-block;
-    padding: 10px 30px;
-    color: #03e9f4;
-    font-size: 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 4px;
-    overflow: hidden;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-	&:hover{
-		background: #03e9f4;
+.btn-neon {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  color: #03e9f4;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  &:hover {
+    background: #03e9f4;
     color: #050801;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 200px #03e9f4;
-	}
-	& span {
-		position: absolute;
-		display: block;
-		&:nth-child(1) {
-			top: 0;
-			left: -100%;
-			width: 100%;
-			height: 4px;
-			background: linear-gradient(90deg, transparent, #03e9f4);
-			animation: animate1 1s linear infinite;
-		}
-		&:nth-child(2) {
-			top: -100%;
-			right: 0;
-			width: 4px;
-			height: 100%;
-			background: linear-gradient(180deg, transparent, #03e9f4);
-			animation: animate2 1s linear infinite;
-			animation-delay: 0.25s;
-		}
-		&:nth-child(3) {
-			bottom: 0;
-			right: -100%;
-			width: 100%;
-			height: 4px;
-			background: linear-gradient(270deg, transparent, #03e9f4);
-			animation: animate3 1s linear infinite;
-			animation-delay: 0.5s;
-		}
-		&:nth-child(4) {
-			bottom: -100%;
-			left: 0;
-			width: 4px;
-			height: 100%;
-			background: linear-gradient(0deg, transparent, #03e9f4);
-			animation: animate4 1s linear infinite;
-			animation-delay: 0.75s;
-		}
-	}
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.466);
+  }
+  & span {
+    position: absolute;
+    display: block;
+    &:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: animate1 1s linear infinite;
+    }
+    &:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: animate2 1s linear infinite;
+      animation-delay: 0.25s;
+    }
+    &:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: animate3 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+    &:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(0deg, transparent, #03e9f4);
+      animation: animate4 1s linear infinite;
+      animation-delay: 0.75s;
+    }
+  }
 }
 @keyframes animate1 {
-    0% { left: -100%; }
-    50%, 100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 @keyframes animate2 {
-    0% { top: -100%; }
-    50%, 100% { top: 100%; }
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
 @keyframes animate3 {
-    0% { right: -100%; }
-    50%, 100% { right: 100%; }
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 @keyframes animate4 {
-    0% { bottom: -100%; }
-    50%, 100% { bottom: 100%; }
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
-

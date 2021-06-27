@@ -20,7 +20,7 @@
 		"node-sass": "^4.13.0",
 		"popper": "^1.0.1",
 		"react": "^16.11.0",
-		"react-countup": "^4.2.3",
+		"react-countup": "^4.3.3",
 		"react-dom": "^16.11.0",
 		"react-epic-spinners": "^0.4.1",
 		"react-ga": "^2.5.6",

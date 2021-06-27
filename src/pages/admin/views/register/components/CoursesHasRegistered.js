@@ -12,7 +12,7 @@ const CoursesHasRegistered = props => {
 					<td>{item.maKhoaHoc}</td>
 					<td>{item.tenKhoaHoc}</td>
 					<td><i
-						class="fa fa-times"
+						className="fa fa-times"
 						aria-hidden="true"
 						onClick={() => {
 							Swal.fire({
@@ -52,10 +52,10 @@ const CoursesHasRegistered = props => {
 					{props.ListCourseAccepted.length ? (
 						renderTableHTML()
 					) : (
-							<td colSpan="5" className="message">
-								Không có khóa học
+						<td colSpan="5" className="message">
+							Không có khóa học
 						</td>
-						)}
+					)}
 				</tbody>
 			</table>
 		</Fragment>

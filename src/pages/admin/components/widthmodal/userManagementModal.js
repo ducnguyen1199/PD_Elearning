@@ -152,7 +152,7 @@ class userManagementModal extends Component {
 						<div className="form-group">
 							<label htmlFor="">Mã loại người dùng </label>
 							<select
-								class="form-control"
+								className="form-control"
 								name="maLoaiNguoiDung"
 								onChange={this.handleOnChange}
 								value={this.state.maLoaiNguoiDung}
@@ -165,7 +165,7 @@ class userManagementModal extends Component {
 						<div className="form-group">
 							<label htmlFor="">Mã nhóm </label>
 							<select
-								class="form-control"
+								className="form-control"
 								name="maNhom"
 								onChange={this.handleOnChange}
 								value={this.state.maNhom}
@@ -186,7 +186,7 @@ class userManagementModal extends Component {
 						</div>
 					</div>
 				</div>
-				<div class="modal-footer">
+				<div className="modal-footer">
 					<button
 						type="button"
 						className="btn btn-primary"

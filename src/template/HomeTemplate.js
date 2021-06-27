@@ -13,11 +13,11 @@ const HomeLayout = (props) => {
     });
   }, [location]);
   return (
-    <Fragment>
+    <>
       <Header />
       {props.children}
       <Footer />
-    </Fragment>
+    </>
   );
 };
 export default function HomeTeamplate({ Component, ...props }) {

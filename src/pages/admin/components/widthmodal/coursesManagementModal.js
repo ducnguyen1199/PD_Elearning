@@ -145,8 +145,8 @@ class coursesManagementModal extends Component {
 					if (
 						!value.match(
 							'^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ' +
-								'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
-								'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
+							'ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ' +
+							'ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$'
 						)
 					) {
 						isValid = false;
@@ -226,7 +226,7 @@ class coursesManagementModal extends Component {
 		return (
 			<Fragment>
 				<form onSubmit={this.handleOnSubmit}>
-					<div class="modal-body">
+					<div className="modal-body">
 						<div className="cm-modal">
 							<div className="cm-modal-content-left">
 								<div
@@ -379,11 +379,11 @@ class coursesManagementModal extends Component {
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-primary">
+					<div className="modal-footer">
+						<button type="submit" className="btn btn-primary">
 							{this.handleNameForm()}
 						</button>
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">
+						<button type="button" className="btn btn-secondary" data-dismiss="modal">
 							Close
 						</button>
 					</div>
