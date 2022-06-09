@@ -78,7 +78,7 @@ class ItemCourse extends Component {
                 <div className="detail-course">
                   <NavLink
                     className="btn--black"
-                    to={`/home/detail-course/${course.maKhoaHoc}?${course.fee}`}
+                    to={`/home/detail-course/${course.maKhoaHoc}?price=${course.fee}`}
                     onClick={() => {
                       this.props.getDataDetailCourse(course.maKhoaHoc);
                     }}
