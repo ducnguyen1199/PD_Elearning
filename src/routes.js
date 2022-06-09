@@ -15,6 +15,7 @@ import RegisterUsersByCourse from './pages/admin/views/register/RegisterUsersByC
 import RegisterCoursesByUser from './pages/admin/views/register/RegisterCoursesByUser';
 import Blog from './pages/home/blog/Blog';
 import About from './pages/home/about/about';
+import AdminTemplate from './template/AdminTemplate';
 
 export const routesHome = [
   { path: '/', exact: true, component: Home },
@@ -41,32 +42,36 @@ export const routesAdmin = [
   {
     path: '/',
     exact: true,
-    layout: DefaultLayout,
     component: () => <Redirect to='/admin/dashboard' />,
   },
   {
     path: '/admin/dashboard',
-    layout: DefaultLayout,
+    exact: true,
+    layout: AdminTemplate,
     component: BlogOverview,
   },
   {
     path: '/admin/courses',
-    layout: DefaultLayout,
+    exact: true,
+    layout: AdminTemplate,
     component: CoursesManagement,
   },
   {
     path: '/admin/user',
-    layout: DefaultLayout,
+    exact: true,
+    layout: AdminTemplate,
     component: UsersManagement,
   },
   {
     path: '/admin/detail-course/:id',
-    layout: DefaultLayout,
+    exact: true,
+    layout: AdminTemplate,
     component: RegisterUsersByCourse,
   },
   {
+    exact: true,
     path: '/admin/detail-user/:id',
-    layout: DefaultLayout,
+    layout: AdminTemplate,
     component: RegisterCoursesByUser,
   },
 ];

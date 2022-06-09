@@ -1,17 +1,23 @@
-import React, { useEffect } from "react";
-import { Route, Redirect, useLocation } from "react-router-dom";
+import React, { memo, useEffect } from 'react';
+import { Route, Redirect, useLocation } from 'react-router-dom';
+import { AdminNavBar } from '../pages/admin/views/Navbar';
 
-const AdminLayout = (props) => {
+const AdminLayout = memo((props) => {
   const location = useLocation();
   useEffect(() => {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }, [location]);
-  return <>{props.children}</>;
-};
+  return (
+    <>
+      <AdminNavBar />
+      {props.children}
+    </>
+  );
+});
 
 export default function AdminTemplate({ Component, ...props }) {
   return (
@@ -19,10 +25,9 @@ export default function AdminTemplate({ Component, ...props }) {
       <Route
         {...props}
         render={(propsComponent) => {
-          if (localStorage.getItem("userAdmin"))
-            return <Component propsComponent={propsComponent} />;
+          if (localStorage.getItem('userAdmin')) return <Component propsComponent={propsComponent} />;
           else {
-            return <Redirect to="/admin" />;
+            return <Redirect to='/admin' />;
           }
         }}
       />
